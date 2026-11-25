@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 892" role="img" aria-label="CMS Streamlined Modular Certification (SMC) process flowchart" font-family="Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" style="background:#f6f5f1">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5a6860"/></marker>
+  </defs>
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#17211d" font-family="Georgia,'Times New Roman',serif">The SMC process at a glance</text>
+  <text x="40" y="56" font-size="13" fill="#5a6860">CMS Streamlined Modular Certification — Medicaid Enterprise Systems · Verified 24 Nov 2026</text>
+  <g>
+    <rect x="40" y="76" width="600" height="92" rx="14" fill="#ffffff" stroke="#d9ddd6" stroke-width="1.5"/>
+    <circle cx="72" cy="122" r="17" fill="#0f766e"/><text x="72" y="127" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">1</text>
+    <text x="102" y="108" font-size="16.5" font-weight="700" fill="#17211d">APD approved</text>
+    <text x="102" y="131" font-size="13" fill="#5a6860">CMS approves the Advance Planning Document</text>
+    <text x="102" y="152" font-size="13" fill="#5a6860">90% federal match for build (DDI) · 75% for operations</text>
+  </g>
+  <line x1="340" y1="168" x2="340" y2="206" stroke="#5a6860" stroke-width="2" marker-end="url(#arr)"/>
+  <g>
+    <rect x="40" y="208" width="600" height="92" rx="14" fill="#ffffff" stroke="#d9ddd6" stroke-width="1.5"/>
+    <circle cx="72" cy="254" r="17" fill="#0f766e"/><text x="72" y="259" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">2</text>
+    <text x="102" y="240" font-size="16.5" font-weight="700" fill="#17211d">SMC Intake Form populated</text>
+    <text x="102" y="263" font-size="13" fill="#5a6860">State lists every outcome + all 22 CEFs, with the evidence named</text>
+    <text x="102" y="284" font-size="13" fill="#5a6860">Finalised form due at least 2 weeks before each review</text>
+  </g>
+  <line x1="340" y1="300" x2="340" y2="338" stroke="#5a6860" stroke-width="2" marker-end="url(#arr)"/>
+  <g>
+    <rect x="40" y="340" width="600" height="92" rx="14" fill="#ffffff" stroke="#d9ddd6" stroke-width="1.5"/>
+    <circle cx="72" cy="386" r="17" fill="#0f766e"/><text x="72" y="391" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3</text>
+    <text x="102" y="372" font-size="16.5" font-weight="700" fill="#17211d">Operational Readiness Review (ORR)</text>
+    <text x="102" y="395" font-size="13" fill="#5a6860">Pre-production, after most UAT · evidence due 2 weeks before</text>
+    <text x="102" y="416" font-size="12.5" font-style="italic" fill="#92400e">Gate: ready? If not — remediate and re-review.</text>
+  </g>
+  <line x1="340" y1="432" x2="340" y2="470" stroke="#5a6860" stroke-width="2" marker-end="url(#arr)"/>
+  <g>
+    <rect x="40" y="472" width="600" height="92" rx="14" fill="#ffffff" stroke="#d9ddd6" stroke-width="1.5"/>
+    <circle cx="72" cy="518" r="17" fill="#0f766e"/><text x="72" y="523" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">4</text>
+    <text x="102" y="504" font-size="16.5" font-weight="700" fill="#17211d">Go-live — system in production</text>
+    <text x="102" y="527" font-size="13" fill="#5a6860">Metric values start flowing into the ORW, monthly</text>
+    <text x="102" y="548" font-size="13" fill="#5a6860">From here the outcomes are measured, not just demonstrated</text>
+  </g>
+  <line x1="340" y1="564" x2="340" y2="602" stroke="#5a6860" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="352" y="590" font-size="12.5" fill="#5a6860">≥ 6 months in production</text>
+  <g>
+    <rect x="40" y="604" width="600" height="92" rx="14" fill="#ffffff" stroke="#d9ddd6" stroke-width="1.5"/>
+    <circle cx="72" cy="650" r="17" fill="#0f766e"/><text x="72" y="655" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">5</text>
+    <text x="102" y="636" font-size="16.5" font-weight="700" fill="#17211d">Certification Review (CR)</text>
+    <text x="102" y="659" font-size="13" fill="#5a6860">Live production demo — no test data · ORW values, 2 weeks before</text>
+    <text x="102" y="680" font-size="12.5" font-style="italic" fill="#92400e">Gate: achieved? If not — CMS follows up on remediations first.</text>
+  </g>
+  <line x1="340" y1="696" x2="340" y2="734" stroke="#5a6860" stroke-width="2" marker-end="url(#arr)"/>
+  <g>
+    <rect x="40" y="736" width="600" height="92" rx="14" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+    <circle cx="72" cy="782" r="17" fill="#ffffff"/><text x="72" y="787" text-anchor="middle" font-size="15" font-weight="700" fill="#0f766e">6</text>
+    <text x="102" y="768" font-size="16.5" font-weight="700" fill="#ffffff">Certified</text>
+    <text x="102" y="791" font-size="13" fill="#ffffff" opacity="0.9">Certification letter + report</text>
+    <text x="102" y="812" font-size="13" fill="#ffffff" opacity="0.9">75% ops match, backdated to the quarter after go-live</text>
+  </g>
+  <text x="40" y="856" font-size="12" fill="#5a6860">After certification: monthly ORW reporting + OAPD updates. Full interactive version with all 169 items:</text>
+  <text x="40" y="874" font-size="12" fill="#0f766e">https://tilakboinapally.github.io/CMS-SMC-Checklist/</text>
+</svg>

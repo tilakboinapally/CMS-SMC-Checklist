@@ -86,6 +86,11 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute
 .sources li{word-break:break-all}
 footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:13px}
 .empty{display:none;background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:20px;text-align:center;color:var(--muted)}
+.flowchart{width:100%;height:auto;display:block}
+.flowchart .fnode{cursor:pointer;transition:stroke .15s}
+.flowchart a:hover .fnode,.flowchart a:focus .fnode{stroke:var(--teal);stroke-width:2.5}
+.flowchart a{outline:none}
+[id]{scroll-margin-top:70px}
 @media print{.controls{display:none} details.item{break-inside:avoid} }
 </style>
 </head>
@@ -118,7 +123,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
   <div class="callout"><strong>Count check — 169 total (21 + 6 + 9 + 27 + 9 + 2 + 5 + 11 + 11 + 6 + 13 + 18 + 9 + 22).</strong> Provider Management certification is exactly 21 items, Eligibility and Enrollment is 27, and Pharmacy Benefit Management and Financial Management are 9 each. Claims Processing is 6. Decision Support / Data Warehouse has only 2 CMS-required outcomes, and Health Information Exchange contributes 0 — CMS publishes no CMS-required outcomes for HIE (see its section). Program Integrity’s 18 rows include 6 items shared from other modules, flagged in place. The funding list is <strong>22, not 25</strong> — the live CMS page, its CSV, SMC Guidance v2.0, and an older state reproduction all list 22. No 25-item version was found. The 22 CEFs are <strong>shared across ALL modules</strong> — one shared section, never duplicated per module. Also: CMS publishes these as web tables with CSV downloads, not as a spreadsheet. The spreadsheet you likely remember is the <strong>SMC Intake Form (.xlsx)</strong> — the blank workbook a state fills in with the lists (tabs: CEF · Outcomes &amp; Metrics · Required Artifacts). <strong>Verified against the CMS repo on 2026-11-24</strong> — the repo is updated quarterly, so outcomes, metrics, and citations may change.</div>
 
   <div class="grid2">
-    <div class="card">
+    <div class="card" id="how-it-fits">
       <h3>How the lists fit together</h3>
       <ul>
         <li><strong>Module outcomes</strong> — module-specific. Based on statute/regulation; they form the baseline a system must meet to be certified and keep enhanced funding for operations. This page covers Provider Management (21), Claims Processing (6), Pharmacy Benefit Management (9), Eligibility and Enrollment (27), Financial Management (9), Decision Support / Data Warehouse (2), Encounter Processing (5), Long-term Services and Supports (11), Member Management (11), Prescription Drug Monitoring Program (6), Third-party Liability (13), Program Integrity (18 rows), Health Information Exchange (0 CMS-required outcomes), and Electronic Visit Verification (9).</li>
@@ -143,7 +148,72 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
     <p>The Medicaid Enterprise Certification Toolkit (MECT) — including its 2007 Chapter 5 “Provider Management Checklist” — was <strong>sunset by CMS on 14 April 2022</strong> (SMD #22-001). States were told not to use MECT/MEET for MES projects started after that date. SMC + the two lists below are the current mechanism. For your Udemy course, teach these, not MECT.</p>
   </div>
 
-  <h2 style="margin-top:30px">How a state proves it — the six proof methods CMS uses (all modules)</h2>
+  <h2 id="process-flow" style="margin-top:30px">The SMC process at a glance</h2>
+  <p style="color:var(--muted);font-size:14.5px;max-width:840px;margin-bottom:12px">Tap any stage to jump to the part of this page that explains it.</p>
+  <div class="card" style="padding:18px 16px 12px">
+  <svg class="flowchart" viewBox="0 0 680 772" role="img" aria-label="SMC certification process flowchart: APD approval, Intake Form, Operational Readiness Review, go-live, Certification Review, certified" font-family="Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+    <defs>
+      <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--muted)"/></marker>
+    </defs>
+    <a href="#how-it-fits"><title>Jump to: How the lists fit together</title>
+      <g><rect class="fnode" x="40" y="8" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="72" cy="54" r="17" style="fill:var(--teal)"/><text x="72" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">1</text>
+      <text x="102" y="40" font-size="16.5" font-weight="700" style="fill:var(--ink)">APD approved</text>
+      <text x="102" y="63" font-size="13" style="fill:var(--muted)">CMS approves the Advance Planning Document</text>
+      <text x="102" y="84" font-size="13" style="fill:var(--muted)">90% federal match for build (DDI) · 75% for operations</text>
+      <text x="624" y="60" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
+    </a>
+    <line x1="340" y1="100" x2="340" y2="138" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
+    <a href="#proof-methods"><title>Jump to: How a state proves it — the six proof methods</title>
+      <g><rect class="fnode" x="40" y="140" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="72" cy="186" r="17" style="fill:var(--teal)"/><text x="72" y="191" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">2</text>
+      <text x="102" y="172" font-size="16.5" font-weight="700" style="fill:var(--ink)">SMC Intake Form populated</text>
+      <text x="102" y="195" font-size="13" style="fill:var(--muted)">State lists every outcome + all 22 CEFs, with the evidence named</text>
+      <text x="102" y="216" font-size="13" style="fill:var(--muted)">Finalised form due at least 2 weeks before each review</text>
+      <text x="624" y="192" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
+    </a>
+    <line x1="340" y1="232" x2="340" y2="270" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
+    <a href="#reviews"><title>Jump to: The two reviews — ORR vs. Certification Review</title>
+      <g><rect class="fnode" x="40" y="272" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="72" cy="318" r="17" style="fill:var(--teal)"/><text x="72" y="323" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">3</text>
+      <text x="102" y="304" font-size="16.5" font-weight="700" style="fill:var(--ink)">Operational Readiness Review (ORR)</text>
+      <text x="102" y="327" font-size="13" style="fill:var(--muted)">Pre-production, after most UAT · evidence due 2 weeks before</text>
+      <text x="102" y="348" font-size="12.5" font-style="italic" style="fill:var(--amber)">Gate: ready? If not — remediate and re-review.</text>
+      <text x="624" y="324" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
+    </a>
+    <line x1="340" y1="364" x2="340" y2="402" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
+    <a href="#controls" onclick="showModule('PM');return false;"><title>Jump to: the module checklists (Provider Management)</title>
+      <g><rect class="fnode" x="40" y="404" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="72" cy="450" r="17" style="fill:var(--teal)"/><text x="72" y="455" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">4</text>
+      <text x="102" y="436" font-size="16.5" font-weight="700" style="fill:var(--ink)">Go-live — system in production</text>
+      <text x="102" y="459" font-size="13" style="fill:var(--muted)">Metric values start flowing into the ORW, monthly</text>
+      <text x="102" y="480" font-size="13" style="fill:var(--muted)">From here the outcomes are measured, not just demonstrated</text>
+      <text x="624" y="456" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
+    </a>
+    <line x1="340" y1="496" x2="340" y2="534" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
+    <text x="352" y="522" font-size="12.5" style="fill:var(--muted)">≥ 6 months in production</text>
+    <a href="#reviews-table"><title>Jump to: the ORR vs. Certification Review table</title>
+      <g><rect class="fnode" x="40" y="536" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="72" cy="582" r="17" style="fill:var(--teal)"/><text x="72" y="587" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">5</text>
+      <text x="102" y="568" font-size="16.5" font-weight="700" style="fill:var(--ink)">Certification Review (CR)</text>
+      <text x="102" y="591" font-size="13" style="fill:var(--muted)">Live production demo — no test data · ORW values, 2 weeks before</text>
+      <text x="102" y="612" font-size="12.5" font-style="italic" style="fill:var(--amber)">Gate: achieved? If not — CMS follows up on remediations first.</text>
+      <text x="624" y="588" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
+    </a>
+    <line x1="340" y1="628" x2="340" y2="666" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
+    <a href="#state-examples"><title>Jump to: State examples — what states have actually done</title>
+      <g><rect class="fnode" x="40" y="668" width="600" height="92" rx="14" style="fill:var(--teal);stroke:var(--teal);stroke-width:1.5"/>
+      <circle cx="72" cy="714" r="17" fill="#fff"/><text x="72" y="719" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--teal)">6</text>
+      <text x="102" y="700" font-size="16.5" font-weight="700" fill="#fff">Certified</text>
+      <text x="102" y="723" font-size="13" fill="#fff" opacity="0.9">Certification letter + report</text>
+      <text x="102" y="744" font-size="13" fill="#fff" opacity="0.9">75% ops match, backdated to the quarter after go-live</text>
+      <text x="624" y="720" text-anchor="end" font-size="22" fill="#fff">›</text></g>
+    </a>
+  </svg>
+  <p style="font-size:13.5px;color:var(--muted);margin:6px 4px 4px">After certification: monthly ORW reporting + OAPD updates. CEFs aren’t re-demonstrated at CR unless something changed, a new DR test ran, or a new security assessment is due. · <a href="https://raw.githubusercontent.com/tilakboinapally/CMS-SMC-Checklist/main/smc-process-flowchart.svg" target="_blank" rel="noopener">Download this flowchart as a standalone SVG (for slides)</a></p>
+  </div>
+
+  <h2 id="proof-methods" style="margin-top:30px">How a state proves it — the six proof methods CMS uses (all modules)</h2>
   <p style="color:var(--muted);font-size:14.5px;max-width:840px;margin-bottom:12px">From SMC Guidance v2.0 and the MES Certification Repository. This taxonomy applies to <strong>all modules</strong> on this page — Provider Management, Claims Processing, Pharmacy Benefit Management, Eligibility and Enrollment, Financial Management, Decision Support / Data Warehouse, Encounter Processing, Long-term Services and Supports, Member Management, Prescription Drug Monitoring Program, Third-party Liability, Program Integrity, and Electronic Visit Verification, plus the shared CEFs. Almost every outcome item is proved by a <strong>combination</strong> — the per-item panels below give the primary method first, then what it looks like in practice.</p>
   <div class="card" style="padding:6px 16px">
     <table>
@@ -188,9 +258,9 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
     </div>
   </div>
 
-  <h2 style="margin-top:30px">The two reviews — ORR vs. Certification Review (all modules)</h2>
+  <h2 id="reviews" style="margin-top:30px">The two reviews — ORR vs. Certification Review (all modules)</h2>
   <p style="color:var(--muted);font-size:14.5px;max-width:840px;margin-bottom:12px">The same Intake Form is adjudicated twice for every module: once before go-live, once after at least six months in production.</p>
-  <div class="card" style="padding:6px 16px">
+  <div class="card" id="reviews-table" style="padding:6px 16px">
     <table>
       <tr><th style="width:170px"></th><th>Operational Readiness Review (ORR)</th><th>Certification Review (CR)</th></tr>
       <tr><td><strong>When</strong></td><td>Pre-production, before go-live, after most UAT is complete.</td><td>System in production ≥ 6 months; CMS advises scheduling toward the end of month 7 after go-live, to allow time to pull metrics.</td></tr>
@@ -521,7 +591,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
   </div>
 
   <div id="pmExamples">
-  <h2 style="margin-top:36px">State examples — Provider Management: what states have actually done</h2>
+  <h2 id="state-examples" style="margin-top:36px">State examples — Provider Management: what states have actually done</h2>
   <p style="color:var(--muted);font-size:14.5px;max-width:840px">Researched 24 Nov 2026. Read the labels carefully: CMS publishes <strong>no</strong> certification letter, certification report, completed Intake Form, or ORW metric values for any Provider Management module — that evidence lives in CMS’s Box repository and is not public. Everything below is a <strong>vendor or state announcement</strong> or a <strong>procurement document</strong>, labelled as such. They show that certifications and procurements happened — not what CMS adjudicated item by item.</p>
 
   <div class="callout"><strong>Headline finding:</strong> CMS’s own repository table of CMS-approved <strong>state-specific PM outcomes was empty</strong> when verified live on 24 Nov 2026 (“We are actively gathering and evaluating outcomes statements crafted by states for this business area…”). And <strong>no state has published per-item PM metric values</strong> — no average enrolment or screening time, denial count, or directory-hit count for any state. The numbers that are public (Ohio’s provider counts, Utah’s uptime) are programme-scale figures, <strong>not</strong> PM1–PM21 metric values. Worked examples for training should use CMS’s own published formulas and its one illustrative example — PM9: <em>“10 providers undergoing background checks. Aging range from 1–10 days.”</em></div>
