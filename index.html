@@ -197,18 +197,6 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
         <div class="sectionhead" style="margin-top:0"><div><h2>Claims Processing — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). Titles are CMS’s own. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div class="pa-note"><strong>Prior authorization is NOT a standalone CMS module.</strong> CMS lists it in two places: <strong>CP3</strong> here (prior authorization for medical services) and <strong>PBM6</strong> in Pharmacy Benefit Management (pharmacy prior authorization: 24-hour response, 72-hour emergency supply) — both citing SSA 1927(d)(5). <button class="xlink" onclick="jumpTo('PBM6')">Go to PBM6 — pharmacy prior authorization →</button></div>
         <div id="cpList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Claims Processing</h3>
-        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. CMS’s repository table of state-specific outcomes is <strong>empty for Claims Processing</strong> (CMS is actively gathering examples). The examples below are <strong>certification announcements, not outcome data</strong>.</div>
-        <div class="card" style="margin:12px 0">
-          <h3>Kansas — first fully modular system to achieve SMC</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certification announcement</span> <span class="tag">Gainwell · announced 7 Mar 2023</span></p>
-          <p>Gainwell’s nine-module Medicaid system in Kansas was the <strong>first fully modular system to achieve CMS Streamlined Modular Certification</strong>, announced March 7, 2023, with <strong>zero findings</strong>. Claims Processing was among the certified modules. No per-item CP metric values were published.</p>
-        </div>
-        <div class="card" style="margin:12px 0">
-          <h3>Wyoming — Medicaid Benefit Management System (claims processing &amp; adjudication)</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certification announcement</span> <span class="tag">CNSI · announced Feb 2023</span></p>
-          <p>CNSI’s Medicaid Benefit Management System — covering claims processing and adjudication — received CMS certification, announced February 2023. The system has been live since <strong>October 25, 2021</strong>, serving about <strong>60,000 actively enrolled members per month</strong> and processing about <strong>3 million claims per year</strong> — programme-scale figures, not CP1–CP6 metric values.</p>
-        </div>
       </section>
 
       <section class="module-panel" id="panel-PBM">
@@ -216,116 +204,42 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
         <div class="sectionhead" style="margin-top:0"><div><h2>Pharmacy Benefit Management — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items, only IDs (PBM1–PBM9)</strong> — the short labels shown are descriptive labels added here for navigation, <strong>NOT CMS titles</strong>. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div class="pa-note"><strong>Prior authorization is NOT a standalone CMS module.</strong> CMS lists it in two places: <strong>PBM6</strong> here (pharmacy prior authorization: 24-hour response, 72-hour emergency supply) and <strong>CP3</strong> in Claims Processing (prior authorization for medical services) — both citing SSA 1927(d)(5). <button class="xlink" onclick="jumpTo('CP3')">Go to CP3 — medical prior authorization →</button></div>
         <div id="pbmList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Pharmacy Benefit Management</h3>
-        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. CMS’s repository table of state-specific outcomes is <strong>empty for Pharmacy Benefit Management</strong> (CMS is actively gathering examples). The example below is a <strong>certification announcement, not outcome data</strong> — and <strong>no SMC-era PBM certification announcement was found</strong>.</div>
-        <div class="card" style="margin:12px 0">
-          <h3>Montana — Conduent Flexible Rx PBM module</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certified under MECT (2016) — NOT SMC</span> <span class="tag">Conduent announcement</span></p>
-          <p>Conduent’s Flexible Rx PBM module received federal certification in Montana — the first time certification was granted to an individual Medicaid pharmacy module. <strong>Important:</strong> this was certified under the <strong>earlier MECT process (2016), NOT under SMC</strong> — the announcement itself cites the Medicaid Enterprise Certification Toolkit checklists. It is included as the closest public PBM precedent, clearly labelled; it is not an SMC certification and no PBM metric values were published.</p>
-        </div>
       </section>
 
       <section class="module-panel" id="panel-EE">
         <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Eligibility and Enrollment — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). The titles shown <strong>are CMS’s own</strong> — the E&amp;E list carries a title per item. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="eeList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Eligibility and Enrollment</h3>
-        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. CMS’s repository table of state-specific outcomes is <strong>empty for Eligibility and Enrollment</strong> (its state-specific outcomes file for E&amp;E is an empty placeholder). The examples below are <strong>certification announcements / procurement documents, not outcome data</strong>.</div>
-        <div class="card" style="margin:12px 0">
-          <h3>Puerto Rico — MEDITI3G eligibility &amp; enrollment system</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certification announcement</span> <span class="tag">RedMane · certified Feb 2023</span></p>
-          <p>Puerto Rico’s MEDITI3G — built on the <strong>Cúram framework with an integration layer</strong>, vendor <strong>RedMane</strong> — was <strong>certified by CMS under SMC in February 2023</strong>. No per-item EE metric values were published. Source: Puerto Rico Medicaid Program E&amp;E Request for Information, September 29, 2023 (medicaid.pr.gov).</p>
-        </div>
-        <div class="card" style="margin:12px 0">
-          <h3>South Dakota — BEES (Benefits Eligibility and Enrollment System)</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certification announcement</span> <span class="tag">RedMane / PRNewswire · ~Sep 2025</span></p>
-          <p>South Dakota’s BEES — <strong>RedMane, on the Cúram platform</strong> — received <strong>full CMS certification after its SMC assessment, retroactive to September 2024</strong>; the system launched in <strong>March 2024</strong>. No per-item EE metric values were published. Source: RedMane / PRNewswire, ~September 2025.</p>
-        </div>
       </section>
 
       <section class="module-panel" id="panel-FM">
         <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Financial Management — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items, only IDs (FM1–FM9)</strong> — the short labels shown are descriptive labels added here for navigation, <strong>NOT CMS titles</strong>. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="fmList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Financial Management</h3>
-        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. CMS’s repository table of state-specific outcomes is <strong>empty for Financial Management</strong> (its state-specific outcomes file for FM is an empty placeholder). The example below is a <strong>certification announcement, not outcome data</strong> — and <strong>no standalone FM-only certification announcement was found</strong>.</div>
-        <div class="card" style="margin:12px 0">
-          <h3>Kansas — Gainwell nine-module Medicaid system (includes Financial Management)</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certification announcement</span> <span class="tag">Gainwell · announced 7 Mar 2023</span></p>
-          <p>Gainwell’s nine-module Medicaid system in Kansas was the <strong>first fully modular SMC certification</strong>, announced March 7, 2023, with <strong>zero findings</strong>. The certified modules explicitly include <strong>financial management</strong> — alongside claims processing, provider enrollment and management, program integrity, managed care, member management, and data warehouse. No per-item FM metric values were published. Source: Gainwell Technologies / GlobeNewswire, March 7, 2023.</p>
-        </div>
       </section>
 
       <section class="module-panel" id="panel-DSS">
         <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Decision Support / Data Warehouse — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>Only 2 CMS-required outcomes exist for this module</strong> — the DSSDW CSV is complete as published (header + 2 rows), cross-checked against the “DSS DW” sheet of <em>MES Outcomes - All.xlsx</em>. <strong>CMS gives NO titles for these items</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="dssList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Decision Support / Data Warehouse</h3>
-        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. The examples below are <strong>certification announcements, not outcome data</strong>. The repository’s state-specific DSSDW outcomes exist only for Missouri (2 rows) and Nebraska (12 rows) — those are <strong>state-specific outcomes, NOT CMS-required items</strong>, and no DSSDW certification announcement was found for either state (Nebraska’s MedDMS is in progress, not certified).</div>
-        <div class="card" style="margin:12px 0">
-          <h3>Virginia — Enterprise Data Warehouse System (EDWS)</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">SMC-era</span> <span class="tag">Certification approval 08/10/2022 · 75:25 match</span></p>
-          <p>Virginia’s Enterprise Data Warehouse System received CMS certification approval on <strong>August 10, 2022</strong>, affirming the 75:25 federal match. No per-item DSS/DW metric values were published. Source: <a href="https://townhall.virginia.gov/L./GetFile.cfm?File=meeting\64\33456\Agenda_DMAS_33456_v4.pdf" target="_blank" rel="noopener">Virginia Town Hall — DMAS agenda document ↗</a></p>
-        </div>
-        <div class="card" style="margin:12px 0">
-          <h3>District of Columbia — Medicaid Data Warehouse (MDW)</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">MECT-era (pre-SMC)</span> <span class="tag">Launched 30 Sep 2017 · certified ~Jan 2019</span></p>
-          <p>D.C.’s Medicaid Data Warehouse launched September 30, 2017 and was CMS certified around January 2019, with the 75% federal match affirmed — under the earlier MECT process, not SMC. Source: <a href="https://dhcf.dc.gov/es/node/1379686" target="_blank" rel="noopener">D.C. DHCF ↗</a></p>
-        </div>
-        <div class="card" style="margin:12px 0">
-          <h3>Kansas — Enterprise Data Warehouse (KMMS Stage 1)</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">MECT-era (pre-SMC)</span> <span class="tag">DXC / Cerner · certified 5 Dec 2019</span></p>
-          <p>Kansas’s Enterprise Data Warehouse (with Cerner) was certified as part of KMMS Stage 1 on December 5, 2019 (DXC) — MECT-era, separate from Kansas’s later March 2023 SMC platform certification. Source: <a href="https://dxc.com/newsroom/12052019" target="_blank" rel="noopener">DXC newsroom ↗</a></p>
-        </div>
       </section>
 
       <section class="module-panel" id="panel-EPS">
         <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Encounter Processing — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items, only IDs (EPS1–EPS5)</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="epsList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Encounter Processing</h3>
-        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. <strong>No SMC-era standalone Encounter Processing certification announcement was found</strong> — the verified example below is MECT-era. Kansas is <strong>not</strong> used as an EPS example: its announcement does not break out an Encounter Processing module.</div>
-        <div class="card" style="margin:12px 0">
-          <h3>Virginia — Encounter Processing Solution (EPS)</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">MECT-era (pre-SMC)</span> <span class="tag">In-house (IBM rules engine) · live 6 Sep 2017 · certified 7 Dec 2018</span></p>
-          <p>Virginia built its Encounter Processing Solution in-house on an IBM rules engine. It went live September 6, 2017 and was CMS certified December 7, 2018; by July 24, 2019 it had processed <strong>111,225,000+ claims/encounters</strong> — a programme-scale figure, not an EPS1–EPS5 metric value. Sources: <a href="https://rga.lis.virginia.gov/Published/2019/RD594/PDF" target="_blank" rel="noopener">Virginia report (RD594) ↗</a> · <a href="https://vita.es.virginia.gov/media/vitavirginiagov/it-governance/agency-it-strategic-plans/2024-2026/ITSP_FY24-26_602_summary.pdf" target="_blank" rel="noopener">VITA strategic plan ↗</a></p>
-        </div>
-        <div class="card" style="margin:12px 0">
-          <h3>North Carolina — reuse of Virginia’s EPS</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Reuse — not a separate certification</span></p>
-          <p>North Carolina reused Virginia’s Encounter Processing Solution. No separate North Carolina certification date was found, so this is reported as <strong>reuse</strong> (the CEF13 pattern), not as a second certification.</p>
-        </div>
       </section>
 
       <section class="module-panel" id="panel-LTSS">
         <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Long-term Services and Supports — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items, only IDs (LTSS1–LTSS11)</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. Expand any item for its metric, regulation, proof method, and a plain-language practice note. Note: no LTSS metric says “provide a sample report/copy,” so the document-artifact proof path does not apply to any LTSS item.</p></div></div>
         <div id="ltssList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Long-term Services and Supports</h3>
-        <div class="callout"><strong>None found — stated plainly:</strong> no verifiable state LTSS-module certification exists in the public record checked for this page, so no example is shown. Two things that are <strong>not</strong> certifications and are not presented as such: South Dakota’s Division of LTSS selected Therap as its vendor in 2020 (a procurement, pre-SMC), and Kansas’s nine-module SMC certification (March 2023) did <strong>not</strong> include an LTSS module.</div>
       </section>
 
       <section class="module-panel" id="panel-MM">
         <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Member Management — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items, only IDs (MM1–MM11)</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. Citation formatting is inconsistent in the CMS source (e.g. “CFR 42 438.54”) and is copied exactly as published. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="mmList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Member Management</h3>
-        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. The examples below are <strong>certification announcements, not outcome data</strong> — only Kansas names Member Management explicitly; the other two are whole-system certifications, labelled as such.</div>
-        <div class="card" style="margin:12px 0">
-          <h3>Kansas — Gainwell nine-module Medicaid system (includes Member Management)</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">SMC-era</span> <span class="tag">Gainwell · announced 7 Mar 2023 · zero findings</span></p>
-          <p>Gainwell’s nine-module Medicaid system in Kansas was the <strong>first fully modular SMC certification</strong>, announced March 7, 2023, with <strong>zero findings</strong>. Member management is explicitly listed among the nine modules. No per-item MM metric values were published. Source: <a href="https://www.gainwelltechnologies.com/resources/news/gainwell-technologies-fully-modular-medicaid-system-enables-kansas-to-achieve-cms-certification/" target="_blank" rel="noopener">Gainwell Technologies ↗</a></p>
-        </div>
-        <div class="card" style="margin:12px 0">
-          <h3>Wyoming — Medicaid Benefit Management System</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">SMC-era</span> <span class="tag">CNSI / Acentra · announced 1 Feb 2023 · whole-system, NOT MM-specific</span></p>
-          <p>Wyoming’s Medicaid Benefit Management System (CNSI/Acentra, ~60,000 members/month) was CMS certified, announced February 1, 2023. It is a whole-system example centred on claims/fiscal-agent functions — <strong>not</strong> a Member Management-specific certification. Sources: <a href="https://www.insights.govforum.io/2023/02/press-release-wyoming-receives-cms-certification-for-states-medicaid-benefit-management-system-implemented-by-cnsi-2/" target="_blank" rel="noopener">GovForum Insights ↗</a> · <a href="https://acentra.com/case-studies/wyoming-mmis-implementation-case-study/" target="_blank" rel="noopener">Acentra case study ↗</a></p>
-        </div>
-        <div class="card" style="margin:12px 0">
-          <h3>Utah — PRISM</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">SMC-era</span> <span class="tag">Acentra Health · announced 8 May 2025 · NOT MM-specific</span></p>
-          <p>Utah’s PRISM (Acentra Health, evoBrix) achieved CMS certification, announced May 8, 2025. Its scope is claims/eligibility/provider functions — <strong>not</strong> Member Management specifically — so it is included as an adjacent platform certification only. Source: <a href="https://www.einpresswire.com/article-print/810744148/acentra-health-supports-utah-in-securing-cms-certification-for-medicaid-enterprise-system-modernization" target="_blank" rel="noopener">EIN Presswire ↗</a></p>
-        </div>
       </section>
 
       <section class="module-panel" id="panel-PDMP">
@@ -333,8 +247,6 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
         <div class="sectionhead" style="margin-top:0"><div><h2>Prescription Drug Monitoring Program — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). The titles shown <strong>are CMS’s own</strong> — the PDMP list’s Reference # field combines the ID and title (e.g. “PDMP 1 / Qualified PDMP”). All items rest on §1944 of the Act, added by §5042 of the SUPPORT for Patients and Communities Act (the “Medicaid PARTNERSHIP Act”). Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div class="pa-note"><strong>Scope note (SMC Guidance Table 1):</strong> a PDMP counts as a certifiable module only if the <strong>Medicaid agency owns, operates, and uses</strong> the PDMP. In most states the PDMP sits with the health department or the board of pharmacy, not Medicaid — which is why PDMP certifications are rare.</div>
         <div id="pdmpList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Prescription Drug Monitoring Program</h3>
-        <div class="callout"><strong>None found — stated plainly:</strong> no public SMC certification of a PDMP module was found, so no certification example is shown. Missouri’s statewide PDMP launch (December 13, 2023; Bamboo Health PMP AWARxE / PMP Gateway / NarxCare; announced February 27, 2024) is a <strong>deployment, not a CMS certification</strong>, and is not presented as one. Sources: <a href="https://bamboohealth.com/press-release/bamboo-health-and-missouri-join-forces-to-combat-opioid-epidemic-in-the-state/" target="_blank" rel="noopener">Bamboo Health ↗</a> · <a href="https://oa.mo.gov/node/54226" target="_blank" rel="noopener">Missouri OA ↗</a> · <a href="https://dss.mo.gov/prescription-drug-monitoring-program-pdmp-faq" target="_blank" rel="noopener">Missouri DSS PDMP FAQ ↗</a></div>
       </section>
 
       <section class="module-panel" id="panel-TPL">
@@ -342,21 +254,12 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
         <div class="sectionhead" style="margin-top:0"><div><h2>Third-party Liability — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). The titles shown <strong>are CMS’s own</strong> — the TPL list’s Reference # field combines the ID and title (e.g. “TPL1 Application”). The regulatory anchor is 42 CFR 433.136–433.140 and §1902(a)(25) of the Act (Medicaid as payer of last resort). Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div class="pa-note"><strong>Related item:</strong> <strong>FM6</strong> in Financial Management covers TPL recovery tracking (the TPL recovery aging report) from the financial side — the financial-management view of what this module covers in full. <button class="xlink" onclick="jumpTo('FM6')">Go to FM6 — TPL recovery (Financial Management) →</button></div>
         <div id="tplList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Third-party Liability</h3>
-        <div class="callout"><strong>None found — stated plainly:</strong> no standalone SMC certification of a TPL module was found, and no state has published TPL metric values. The following are real TPL activity but are <strong>not certifications</strong> and are not presented as such: New York’s TPL Match &amp; Recovery operations (Gainwell/HMS contract C202424, April 7, 2025 – April 6, 2028, NY OMIG) — <a href="https://omig.ny.gov/audit/third-party-liability-and-recovery" target="_blank" rel="noopener">NY OMIG ↗</a>; Indiana’s TPL Disallowance Project (Gainwell fiscal agent, HMS subcontractor; bulletin BT202117, March 11, 2021) — <a href="https://www.in.gov/medicaid/providers/files/bulletins/BT202117.pdf" target="_blank" rel="noopener">Indiana bulletin BT202117 ↗</a>; and Florida’s FX/FMMIS IAPD Update (March 2023), which lists TPL as a <em>planned</em> module — <a href="https://ahca.myflorida.com/content/download/22152/file/FX%20IAPDU-23_24-FINAL.pdf" target="_blank" rel="noopener">Florida AHCA IAPD ↗</a>.</div>
       </section>
 
       <section class="module-panel" id="panel-PI">
         <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Program Integrity — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. <strong>Structure, shown faithfully:</strong> this list has 18 rows, but only <strong>PI1–PI12 are native to Program Integrity</strong>. The other 6 rows are <strong>borrowed cross-module items</strong> — CP2, FM5, PBM9, PM11, PM17, PM18 — each flagged below as “shared from” its home module, with a cross-link to the home item. Several PI items also carry CMS’s “*Applicable to CP / E&amp;E / MM / PM” notes, reproduced in the outcome text. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="piList"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Program Integrity</h3>
-        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. The example below is a <strong>certification announcement, not outcome data</strong>. No other standalone, verifiable SMC certification of a Program Integrity module was found. (Ohio’s Maximus certification is a <em>Provider Management</em> certification, not PI — it is not used here.)</div>
-        <div class="card" style="margin:12px 0">
-          <h3>Kansas — Gainwell nine-module Medicaid system (includes Program Integrity)</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">SMC-era</span> <span class="tag">Gainwell · announced 7 Mar 2023 · whole-platform, NOT PI-standalone</span></p>
-          <p>Gainwell’s nine-module Medicaid system in Kansas was the <strong>first fully modular SMC certification</strong>, announced March 7, 2023, with <strong>zero findings</strong>. Program integrity is explicitly listed among the nine modules — but this is a whole-platform certification, not a PI-standalone one. No per-item PI metric values were published. Source: <a href="https://www.gainwelltechnologies.com/resources/news/gainwell-technologies-fully-modular-medicaid-system-enables-kansas-to-achieve-cms-certification/" target="_blank" rel="noopener">Gainwell Technologies ↗</a></p>
-        </div>
       </section>
 
       <section class="module-panel" id="panel-HIE">
@@ -388,14 +291,6 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
           <p style="margin-top:8px"><strong>Representative rows:</strong> Alabama/ACHN ADT-alert counts; Colorado ADT notifications per RAE per month; New Mexico HCV/SVR identification counts and SUD/SEI ED-visit counts; New York SHIN-NY clinical data for value-based-payment quality measures; Wyoming closed-loop diabetes-prevention referrals.</p>
           <p style="margin-top:8px"><strong>Source quirk, flagged not fixed:</strong> one Florida row has the literal value “Florida” in its Metric(s) cell — a data error in the source CSV.</p>
         </div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Example — Health Information Exchange</h3>
-        <div class="card" style="margin:12px 0">
-          <h3>Alabama — Alabama One Health Record® (ALOHR)</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">OBC-era (pre-SMC)</span> <span class="tag">CMS-certified Sept 2021</span> <span class="tag">Platform: InterSystems HealthShare</span></p>
-          <p>Alabama’s ALOHR was CMS-certified in <strong>September 2021</strong> — under the earlier outcomes-based certification (OBC) approach, before SMC. (Date note: the certification letter is dated <strong>September 17, 2021</strong>; Alabama’s SMHP update gives <strong>9/19/2021</strong> — a two-day discrepancy between the two Alabama documents.) The three certified HIE outcomes were: (1) show hospital utilization frequency and key clinical measures per Medicaid recipient in the Alabama care networks; (2) provide reportable data on frequency/consistency of hospital ADT and Transitions of Care data content (data provenance/quality); (3) flag each Medicaid recipient in the Alabama Coordinated Health Network (ACHN) to reduce ER visits and hospital readmissions via timely care-team engagement. A 2026 Alabama presentation adds that ALOHR was the first HIE to pilot/achieve the CMS MITRE certification (2021) and the first HIE to exchange via the TEFCA QHIN framework (2023).</p>
-          <p style="margin-top:8px">Sources: <a href="https://medicaid.alabama.gov/documents/2.0_Newsroom/2.7_Special_Initiatives/2.7.2_Patient_Access/2.7.2_SMHP_2021_Environmental_Scan_2-28-22.pdf" target="_blank" rel="noopener">Alabama SMHP environmental scan ↗</a> · <a href="https://medicaid.alabama.gov/documents/2.0_Newsroom/2.7_Special_Initiatives/2.7.2_Patient_Access/2.7.2_SMHP_2021_3-4-22.pdf" target="_blank" rel="noopener">Alabama SMHP update ↗</a></p>
-        </div>
-        <div class="callout"><strong>Not a certification:</strong> Vermont’s VHIE outcomes-based certification material (March 2021) was <strong>proposal-stage only</strong> — it is not presented as certified. No third verified HIE certification was found. Source: <a href="https://healthdata.vermont.gov/sites/healthdata/files/documents/HIESteeringCommittee_March2021_updated3.19.21.pdf" target="_blank" rel="noopener">Vermont HIE Steering Committee deck ↗</a></div>
       </section>
 
       <section class="module-panel" id="panel-EVV">
@@ -414,18 +309,6 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
           </table>
         </div>
         <div id="evvList" style="margin-top:14px"></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Electronic Visit Verification</h3>
-        <div class="callout"><strong>Read this first:</strong> <strong>no SMC-era (post-August 2025) EVV certification has been announced</strong> anywhere found, and no state has published EVV metric values. There are also <strong>no state-specific EVV examples in the CMS repository</strong> — its State-Specific EVV file is an empty placeholder and CMS is actively gathering examples. Beware a common confusion: many states’ EVV vendor “certifications” (e.g. Ohio alternate-vendor certification via Sandata) are <strong>state/vendor-level testing, NOT CMS module certification</strong>.</div>
-        <div class="card" style="margin:12px 0">
-          <h3>Ohio — first state to complete CMS certification for its EVV module</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">MECT-era</span> <span class="tag">BerryDunn case study · vendor: Sandata</span> <span class="tag">No certification date published</span></p>
-          <p>Ohio was the first state to complete CMS certification for its EVV module (Sandata as the state EVV system/aggregator), per BerryDunn’s case study; the certification support was “based on MECT 2.3 guidelines.” <strong>No certification date was found, so none is asserted here.</strong> Source: <a href="https://www.berrydunn.com/success-stories/modernizing-medicaid-in-middle-america" target="_blank" rel="noopener">BerryDunn success story ↗</a></p>
-        </div>
-        <div class="card" style="margin:12px 0">
-          <h3>Pennsylvania — DHS EVV system certification approved</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">OBC-era</span> <span class="tag">Sandata · announced 8 Apr 2022</span></p>
-          <p>CMS approved certification of Pennsylvania DHS’s EVV system (Sandata), announced in the April 8, 2022 EVV Public Meeting deck — under the EVV OBC scheme that has since been folded into SMC. Source: <a href="https://www.pa.gov/content/dam/copapwp-pagov/en/dhs/documents/providers/billing-info/documents/Electronic%20Visit%20Verification%20EVV%20Public%20Mtg%20Presentation%20-%204.8.2022%20Final.pdf" target="_blank" rel="noopener">PA DHS EVV Public Meeting deck ↗</a></p>
-        </div>
       </section>
 
       <section class="module-panel" id="panel-AVS">
@@ -445,18 +328,6 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
           <p style="margin-top:8px"><strong>How it works in practice:</strong> the system automatically pulls bank-account balances and other financial-institution data for aged/blind/disabled applicants — looking back 60 months/5 years in the District of Columbia’s plan — and compares the total to the resource limit ($4,000 individual / $6,000 married couple). If the AVS result is reasonably compatible with what the applicant attested, no further proof is needed; if it is above the limit and not reasonably compatible, the agency must give the applicant notice and a chance to document or dispute the findings before denying or ending coverage (42 CFR 435.952(d)).</p>
         </div>
         <div class="pa-note"><strong>AVS is a function inside Eligibility &amp; Enrollment, not a standalone module.</strong> It is one of the electronic data sources in <strong>EE5 (Electronic Verification)</strong> — the eligibility system’s automated interfaces include “data from financial institutions for asset verification” — and EE5 also notes that Puerto Rico must implement an Asset Verification System by 2026 under the Consolidated Appropriations Act of 2023, Section 5101. <button class="xlink" onclick="jumpTo('EE5')">Go to EE5 — Electronic Verification →</button></div>
-        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Asset Verification System</h3>
-        <div class="callout"><strong>Read this first:</strong> <strong>no CMS certification of an AVS module was found anywhere</strong>, and neither example below is one. The District of Columbia example is an <strong>operations description in a verification plan</strong>; the Washington State example is <strong>in progress / planned</strong>. They are included to show what AVS looks like in practice — not as certifications.</div>
-        <div class="card" style="margin:12px 0">
-          <h3>District of Columbia — AVS in its Non-MAGI Verification Plan</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">NOT a CMS certification</span> <span class="tag">Verification plan — operations description</span></p>
-          <p>The District of Columbia describes its AVS in its <strong>Non-MAGI Verification Plan</strong>: the AVS automatically retrieves electronic financial information for new applications and annual renewals, looks back <strong>60 months/5 years</strong> at bank balances, and the ESA worker makes the final eligibility decision. This is a verification plan describing operations, <strong>NOT a CMS certification</strong>. Source: <a href="https://dhcf.dc.gov/sites/default/files/dc/sites/dhcf/publication/attachments/DC%20Non-MAGI%20Verification%20Plan%20%281%29.pdf" target="_blank" rel="noopener">D.C. DHCF — Non-MAGI Verification Plan (PDF) ↗</a></p>
-        </div>
-        <div class="card" style="margin:12px 0">
-          <h3>Washington State — Asset Verification Full Integration (AVFI) project</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">NOT certified</span> <span class="tag">In progress / planned</span> <span class="tag">HHS Enterprise Coalition legislative report · 1 Nov 2025</span></p>
-          <p>Washington State’s <strong>Asset Verification Full Integration (AVFI)</strong> project integrates financial-institution data directly into Washington’s <strong>ACES eligibility platform</strong>, eliminating caseworker use of external vendor portals; it “positions the state for compliance with federal requirements for ex parte renewals” and “positions Washington for future system modernization and federal certification.” The regulatory backing named in the report is 42 CFR 435.916, 435.948, 435.949, 435.940. <strong>In progress / planned — NOT certified.</strong> Source: <a href="https://app.leg.wa.gov/ReportsToTheLegislature/Home/GetPDF?fileName=HHS%20Enterprise%20Coalition%20Report%20on%20IT%20Investment%20Coordination_b9fb7eaf-0508-4fbc-bf25-3debe5150609.pdf" target="_blank" rel="noopener">Washington Legislature — HHS Enterprise Coalition report (PDF) ↗</a></p>
-        </div>
       </section>
 
       <section class="module-panel" id="panel-CEF">
@@ -715,6 +586,149 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
     <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">In progress — not certified</span> <span class="tag">Cautionary example</span></p>
     <p>Missouri is procuring IV&amp;V to evaluate its Provider Enrollment Module (primary vendor: Gainwell Technologies). The SOW itself notes CMS has sunset MECT/MEET and introduced SMC with ORR and CR — yet it still frames compliance against the retired <strong>MECT 2.1.1</strong>. A caution: always cite SMC Guidance v2.0 as the current authority. No metric values are public.</p>
   </div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Claims Processing</h3>
+        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. CMS’s repository table of state-specific outcomes is <strong>empty for Claims Processing</strong> (CMS is actively gathering examples). The examples below are <strong>certification announcements, not outcome data</strong>.</div>
+        <div class="card" style="margin:12px 0">
+          <h3>Kansas — first fully modular system to achieve SMC</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certification announcement</span> <span class="tag">Gainwell · announced 7 Mar 2023</span></p>
+          <p>Gainwell’s nine-module Medicaid system in Kansas was the <strong>first fully modular system to achieve CMS Streamlined Modular Certification</strong>, announced March 7, 2023, with <strong>zero findings</strong>. Claims Processing was among the certified modules. No per-item CP metric values were published.</p>
+        </div>
+        <div class="card" style="margin:12px 0">
+          <h3>Wyoming — Medicaid Benefit Management System (claims processing &amp; adjudication)</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certification announcement</span> <span class="tag">CNSI · announced Feb 2023</span></p>
+          <p>CNSI’s Medicaid Benefit Management System — covering claims processing and adjudication — received CMS certification, announced February 2023. The system has been live since <strong>October 25, 2021</strong>, serving about <strong>60,000 actively enrolled members per month</strong> and processing about <strong>3 million claims per year</strong> — programme-scale figures, not CP1–CP6 metric values.</p>
+        </div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Pharmacy Benefit Management</h3>
+        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. CMS’s repository table of state-specific outcomes is <strong>empty for Pharmacy Benefit Management</strong> (CMS is actively gathering examples). The example below is a <strong>certification announcement, not outcome data</strong> — and <strong>no SMC-era PBM certification announcement was found</strong>.</div>
+        <div class="card" style="margin:12px 0">
+          <h3>Montana — Conduent Flexible Rx PBM module</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certified under MECT (2016) — NOT SMC</span> <span class="tag">Conduent announcement</span></p>
+          <p>Conduent’s Flexible Rx PBM module received federal certification in Montana — the first time certification was granted to an individual Medicaid pharmacy module. <strong>Important:</strong> this was certified under the <strong>earlier MECT process (2016), NOT under SMC</strong> — the announcement itself cites the Medicaid Enterprise Certification Toolkit checklists. It is included as the closest public PBM precedent, clearly labelled; it is not an SMC certification and no PBM metric values were published.</p>
+        </div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Eligibility and Enrollment</h3>
+        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. CMS’s repository table of state-specific outcomes is <strong>empty for Eligibility and Enrollment</strong> (its state-specific outcomes file for E&amp;E is an empty placeholder). The examples below are <strong>certification announcements / procurement documents, not outcome data</strong>.</div>
+        <div class="card" style="margin:12px 0">
+          <h3>Puerto Rico — MEDITI3G eligibility &amp; enrollment system</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certification announcement</span> <span class="tag">RedMane · certified Feb 2023</span></p>
+          <p>Puerto Rico’s MEDITI3G — built on the <strong>Cúram framework with an integration layer</strong>, vendor <strong>RedMane</strong> — was <strong>certified by CMS under SMC in February 2023</strong>. No per-item EE metric values were published. Source: Puerto Rico Medicaid Program E&amp;E Request for Information, September 29, 2023 (medicaid.pr.gov).</p>
+        </div>
+        <div class="card" style="margin:12px 0">
+          <h3>South Dakota — BEES (Benefits Eligibility and Enrollment System)</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certification announcement</span> <span class="tag">RedMane / PRNewswire · ~Sep 2025</span></p>
+          <p>South Dakota’s BEES — <strong>RedMane, on the Cúram platform</strong> — received <strong>full CMS certification after its SMC assessment, retroactive to September 2024</strong>; the system launched in <strong>March 2024</strong>. No per-item EE metric values were published. Source: RedMane / PRNewswire, ~September 2025.</p>
+        </div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Financial Management</h3>
+        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. CMS’s repository table of state-specific outcomes is <strong>empty for Financial Management</strong> (its state-specific outcomes file for FM is an empty placeholder). The example below is a <strong>certification announcement, not outcome data</strong> — and <strong>no standalone FM-only certification announcement was found</strong>.</div>
+        <div class="card" style="margin:12px 0">
+          <h3>Kansas — Gainwell nine-module Medicaid system (includes Financial Management)</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Certification announcement</span> <span class="tag">Gainwell · announced 7 Mar 2023</span></p>
+          <p>Gainwell’s nine-module Medicaid system in Kansas was the <strong>first fully modular SMC certification</strong>, announced March 7, 2023, with <strong>zero findings</strong>. The certified modules explicitly include <strong>financial management</strong> — alongside claims processing, provider enrollment and management, program integrity, managed care, member management, and data warehouse. No per-item FM metric values were published. Source: Gainwell Technologies / GlobeNewswire, March 7, 2023.</p>
+        </div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Decision Support / Data Warehouse</h3>
+        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. The examples below are <strong>certification announcements, not outcome data</strong>. The repository’s state-specific DSSDW outcomes exist only for Missouri (2 rows) and Nebraska (12 rows) — those are <strong>state-specific outcomes, NOT CMS-required items</strong>, and no DSSDW certification announcement was found for either state (Nebraska’s MedDMS is in progress, not certified).</div>
+        <div class="card" style="margin:12px 0">
+          <h3>Virginia — Enterprise Data Warehouse System (EDWS)</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">SMC-era</span> <span class="tag">Certification approval 08/10/2022 · 75:25 match</span></p>
+          <p>Virginia’s Enterprise Data Warehouse System received CMS certification approval on <strong>August 10, 2022</strong>, affirming the 75:25 federal match. No per-item DSS/DW metric values were published. Source: <a href="https://townhall.virginia.gov/L./GetFile.cfm?File=meeting\64\33456\Agenda_DMAS_33456_v4.pdf" target="_blank" rel="noopener">Virginia Town Hall — DMAS agenda document ↗</a></p>
+        </div>
+        <div class="card" style="margin:12px 0">
+          <h3>District of Columbia — Medicaid Data Warehouse (MDW)</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">MECT-era (pre-SMC)</span> <span class="tag">Launched 30 Sep 2017 · certified ~Jan 2019</span></p>
+          <p>D.C.’s Medicaid Data Warehouse launched September 30, 2017 and was CMS certified around January 2019, with the 75% federal match affirmed — under the earlier MECT process, not SMC. Source: <a href="https://dhcf.dc.gov/es/node/1379686" target="_blank" rel="noopener">D.C. DHCF ↗</a></p>
+        </div>
+        <div class="card" style="margin:12px 0">
+          <h3>Kansas — Enterprise Data Warehouse (KMMS Stage 1)</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">MECT-era (pre-SMC)</span> <span class="tag">DXC / Cerner · certified 5 Dec 2019</span></p>
+          <p>Kansas’s Enterprise Data Warehouse (with Cerner) was certified as part of KMMS Stage 1 on December 5, 2019 (DXC) — MECT-era, separate from Kansas’s later March 2023 SMC platform certification. Source: <a href="https://dxc.com/newsroom/12052019" target="_blank" rel="noopener">DXC newsroom ↗</a></p>
+        </div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Encounter Processing</h3>
+        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. <strong>No SMC-era standalone Encounter Processing certification announcement was found</strong> — the verified example below is MECT-era. Kansas is <strong>not</strong> used as an EPS example: its announcement does not break out an Encounter Processing module.</div>
+        <div class="card" style="margin:12px 0">
+          <h3>Virginia — Encounter Processing Solution (EPS)</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">MECT-era (pre-SMC)</span> <span class="tag">In-house (IBM rules engine) · live 6 Sep 2017 · certified 7 Dec 2018</span></p>
+          <p>Virginia built its Encounter Processing Solution in-house on an IBM rules engine. It went live September 6, 2017 and was CMS certified December 7, 2018; by July 24, 2019 it had processed <strong>111,225,000+ claims/encounters</strong> — a programme-scale figure, not an EPS1–EPS5 metric value. Sources: <a href="https://rga.lis.virginia.gov/Published/2019/RD594/PDF" target="_blank" rel="noopener">Virginia report (RD594) ↗</a> · <a href="https://vita.es.virginia.gov/media/vitavirginiagov/it-governance/agency-it-strategic-plans/2024-2026/ITSP_FY24-26_602_summary.pdf" target="_blank" rel="noopener">VITA strategic plan ↗</a></p>
+        </div>
+        <div class="card" style="margin:12px 0">
+          <h3>North Carolina — reuse of Virginia’s EPS</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">Reuse — not a separate certification</span></p>
+          <p>North Carolina reused Virginia’s Encounter Processing Solution. No separate North Carolina certification date was found, so this is reported as <strong>reuse</strong> (the CEF13 pattern), not as a second certification.</p>
+        </div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Long-term Services and Supports</h3>
+        <div class="callout"><strong>None found — stated plainly:</strong> no verifiable state LTSS-module certification exists in the public record checked for this page, so no example is shown. Two things that are <strong>not</strong> certifications and are not presented as such: South Dakota’s Division of LTSS selected Therap as its vendor in 2020 (a procurement, pre-SMC), and Kansas’s nine-module SMC certification (March 2023) did <strong>not</strong> include an LTSS module.</div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Member Management</h3>
+        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. The examples below are <strong>certification announcements, not outcome data</strong> — only Kansas names Member Management explicitly; the other two are whole-system certifications, labelled as such.</div>
+        <div class="card" style="margin:12px 0">
+          <h3>Kansas — Gainwell nine-module Medicaid system (includes Member Management)</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">SMC-era</span> <span class="tag">Gainwell · announced 7 Mar 2023 · zero findings</span></p>
+          <p>Gainwell’s nine-module Medicaid system in Kansas was the <strong>first fully modular SMC certification</strong>, announced March 7, 2023, with <strong>zero findings</strong>. Member management is explicitly listed among the nine modules. No per-item MM metric values were published. Source: <a href="https://www.gainwelltechnologies.com/resources/news/gainwell-technologies-fully-modular-medicaid-system-enables-kansas-to-achieve-cms-certification/" target="_blank" rel="noopener">Gainwell Technologies ↗</a></p>
+        </div>
+        <div class="card" style="margin:12px 0">
+          <h3>Wyoming — Medicaid Benefit Management System</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">SMC-era</span> <span class="tag">CNSI / Acentra · announced 1 Feb 2023 · whole-system, NOT MM-specific</span></p>
+          <p>Wyoming’s Medicaid Benefit Management System (CNSI/Acentra, ~60,000 members/month) was CMS certified, announced February 1, 2023. It is a whole-system example centred on claims/fiscal-agent functions — <strong>not</strong> a Member Management-specific certification. Sources: <a href="https://www.insights.govforum.io/2023/02/press-release-wyoming-receives-cms-certification-for-states-medicaid-benefit-management-system-implemented-by-cnsi-2/" target="_blank" rel="noopener">GovForum Insights ↗</a> · <a href="https://acentra.com/case-studies/wyoming-mmis-implementation-case-study/" target="_blank" rel="noopener">Acentra case study ↗</a></p>
+        </div>
+        <div class="card" style="margin:12px 0">
+          <h3>Utah — PRISM</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">SMC-era</span> <span class="tag">Acentra Health · announced 8 May 2025 · NOT MM-specific</span></p>
+          <p>Utah’s PRISM (Acentra Health, evoBrix) achieved CMS certification, announced May 8, 2025. Its scope is claims/eligibility/provider functions — <strong>not</strong> Member Management specifically — so it is included as an adjacent platform certification only. Source: <a href="https://www.einpresswire.com/article-print/810744148/acentra-health-supports-utah-in-securing-cms-certification-for-medicaid-enterprise-system-modernization" target="_blank" rel="noopener">EIN Presswire ↗</a></p>
+        </div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Prescription Drug Monitoring Program</h3>
+        <div class="callout"><strong>None found — stated plainly:</strong> no public SMC certification of a PDMP module was found, so no certification example is shown. Missouri’s statewide PDMP launch (December 13, 2023; Bamboo Health PMP AWARxE / PMP Gateway / NarxCare; announced February 27, 2024) is a <strong>deployment, not a CMS certification</strong>, and is not presented as one. Sources: <a href="https://bamboohealth.com/press-release/bamboo-health-and-missouri-join-forces-to-combat-opioid-epidemic-in-the-state/" target="_blank" rel="noopener">Bamboo Health ↗</a> · <a href="https://oa.mo.gov/node/54226" target="_blank" rel="noopener">Missouri OA ↗</a> · <a href="https://dss.mo.gov/prescription-drug-monitoring-program-pdmp-faq" target="_blank" rel="noopener">Missouri DSS PDMP FAQ ↗</a></div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Third-party Liability</h3>
+        <div class="callout"><strong>None found — stated plainly:</strong> no standalone SMC certification of a TPL module was found, and no state has published TPL metric values. The following are real TPL activity but are <strong>not certifications</strong> and are not presented as such: New York’s TPL Match &amp; Recovery operations (Gainwell/HMS contract C202424, April 7, 2025 – April 6, 2028, NY OMIG) — <a href="https://omig.ny.gov/audit/third-party-liability-and-recovery" target="_blank" rel="noopener">NY OMIG ↗</a>; Indiana’s TPL Disallowance Project (Gainwell fiscal agent, HMS subcontractor; bulletin BT202117, March 11, 2021) — <a href="https://www.in.gov/medicaid/providers/files/bulletins/BT202117.pdf" target="_blank" rel="noopener">Indiana bulletin BT202117 ↗</a>; and Florida’s FX/FMMIS IAPD Update (March 2023), which lists TPL as a <em>planned</em> module — <a href="https://ahca.myflorida.com/content/download/22152/file/FX%20IAPDU-23_24-FINAL.pdf" target="_blank" rel="noopener">Florida AHCA IAPD ↗</a>.</div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Program Integrity</h3>
+        <div class="callout"><strong>Read this first:</strong> CMS publishes no state-specific outcome values and no pass/fail thresholds for any metric; no state has published its actual metric values. The example below is a <strong>certification announcement, not outcome data</strong>. No other standalone, verifiable SMC certification of a Program Integrity module was found. (Ohio’s Maximus certification is a <em>Provider Management</em> certification, not PI — it is not used here.)</div>
+        <div class="card" style="margin:12px 0">
+          <h3>Kansas — Gainwell nine-module Medicaid system (includes Program Integrity)</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">SMC-era</span> <span class="tag">Gainwell · announced 7 Mar 2023 · whole-platform, NOT PI-standalone</span></p>
+          <p>Gainwell’s nine-module Medicaid system in Kansas was the <strong>first fully modular SMC certification</strong>, announced March 7, 2023, with <strong>zero findings</strong>. Program integrity is explicitly listed among the nine modules — but this is a whole-platform certification, not a PI-standalone one. No per-item PI metric values were published. Source: <a href="https://www.gainwelltechnologies.com/resources/news/gainwell-technologies-fully-modular-medicaid-system-enables-kansas-to-achieve-cms-certification/" target="_blank" rel="noopener">Gainwell Technologies ↗</a></p>
+        </div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Example — Health Information Exchange</h3>
+        <div class="card" style="margin:12px 0">
+          <h3>Alabama — Alabama One Health Record® (ALOHR)</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">OBC-era (pre-SMC)</span> <span class="tag">CMS-certified Sept 2021</span> <span class="tag">Platform: InterSystems HealthShare</span></p>
+          <p>Alabama’s ALOHR was CMS-certified in <strong>September 2021</strong> — under the earlier outcomes-based certification (OBC) approach, before SMC. (Date note: the certification letter is dated <strong>September 17, 2021</strong>; Alabama’s SMHP update gives <strong>9/19/2021</strong> — a two-day discrepancy between the two Alabama documents.) The three certified HIE outcomes were: (1) show hospital utilization frequency and key clinical measures per Medicaid recipient in the Alabama care networks; (2) provide reportable data on frequency/consistency of hospital ADT and Transitions of Care data content (data provenance/quality); (3) flag each Medicaid recipient in the Alabama Coordinated Health Network (ACHN) to reduce ER visits and hospital readmissions via timely care-team engagement. A 2026 Alabama presentation adds that ALOHR was the first HIE to pilot/achieve the CMS MITRE certification (2021) and the first HIE to exchange via the TEFCA QHIN framework (2023).</p>
+          <p style="margin-top:8px">Sources: <a href="https://medicaid.alabama.gov/documents/2.0_Newsroom/2.7_Special_Initiatives/2.7.2_Patient_Access/2.7.2_SMHP_2021_Environmental_Scan_2-28-22.pdf" target="_blank" rel="noopener">Alabama SMHP environmental scan ↗</a> · <a href="https://medicaid.alabama.gov/documents/2.0_Newsroom/2.7_Special_Initiatives/2.7.2_Patient_Access/2.7.2_SMHP_2021_3-4-22.pdf" target="_blank" rel="noopener">Alabama SMHP update ↗</a></p>
+        </div>
+        <div class="callout"><strong>Not a certification:</strong> Vermont’s VHIE outcomes-based certification material (March 2021) was <strong>proposal-stage only</strong> — it is not presented as certified. No third verified HIE certification was found. Source: <a href="https://healthdata.vermont.gov/sites/healthdata/files/documents/HIESteeringCommittee_March2021_updated3.19.21.pdf" target="_blank" rel="noopener">Vermont HIE Steering Committee deck ↗</a></div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Electronic Visit Verification</h3>
+        <div class="callout"><strong>Read this first:</strong> <strong>no SMC-era (post-August 2025) EVV certification has been announced</strong> anywhere found, and no state has published EVV metric values. There are also <strong>no state-specific EVV examples in the CMS repository</strong> — its State-Specific EVV file is an empty placeholder and CMS is actively gathering examples. Beware a common confusion: many states’ EVV vendor “certifications” (e.g. Ohio alternate-vendor certification via Sandata) are <strong>state/vendor-level testing, NOT CMS module certification</strong>.</div>
+        <div class="card" style="margin:12px 0">
+          <h3>Ohio — first state to complete CMS certification for its EVV module</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">MECT-era</span> <span class="tag">BerryDunn case study · vendor: Sandata</span> <span class="tag">No certification date published</span></p>
+          <p>Ohio was the first state to complete CMS certification for its EVV module (Sandata as the state EVV system/aggregator), per BerryDunn’s case study; the certification support was “based on MECT 2.3 guidelines.” <strong>No certification date was found, so none is asserted here.</strong> Source: <a href="https://www.berrydunn.com/success-stories/modernizing-medicaid-in-middle-america" target="_blank" rel="noopener">BerryDunn success story ↗</a></p>
+        </div>
+        <div class="card" style="margin:12px 0">
+          <h3>Pennsylvania — DHS EVV system certification approved</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">OBC-era</span> <span class="tag">Sandata · announced 8 Apr 2022</span></p>
+          <p>CMS approved certification of Pennsylvania DHS’s EVV system (Sandata), announced in the April 8, 2022 EVV Public Meeting deck — under the EVV OBC scheme that has since been folded into SMC. Source: <a href="https://www.pa.gov/content/dam/copapwp-pagov/en/dhs/documents/providers/billing-info/documents/Electronic%20Visit%20Verification%20EVV%20Public%20Mtg%20Presentation%20-%204.8.2022%20Final.pdf" target="_blank" rel="noopener">PA DHS EVV Public Meeting deck ↗</a></p>
+        </div>
+
+        <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Asset Verification System</h3>
+        <div class="callout"><strong>Read this first:</strong> <strong>no CMS certification of an AVS module was found anywhere</strong>, and neither example below is one. The District of Columbia example is an <strong>operations description in a verification plan</strong>; the Washington State example is <strong>in progress / planned</strong>. They are included to show what AVS looks like in practice — not as certifications.</div>
+        <div class="card" style="margin:12px 0">
+          <h3>District of Columbia — AVS in its Non-MAGI Verification Plan</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">NOT a CMS certification</span> <span class="tag">Verification plan — operations description</span></p>
+          <p>The District of Columbia describes its AVS in its <strong>Non-MAGI Verification Plan</strong>: the AVS automatically retrieves electronic financial information for new applications and annual renewals, looks back <strong>60 months/5 years</strong> at bank balances, and the ESA worker makes the final eligibility decision. This is a verification plan describing operations, <strong>NOT a CMS certification</strong>. Source: <a href="https://dhcf.dc.gov/sites/default/files/dc/sites/dhcf/publication/attachments/DC%20Non-MAGI%20Verification%20Plan%20%281%29.pdf" target="_blank" rel="noopener">D.C. DHCF — Non-MAGI Verification Plan (PDF) ↗</a></p>
+        </div>
+        <div class="card" style="margin:12px 0">
+          <h3>Washington State — Asset Verification Full Integration (AVFI) project</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">NOT certified</span> <span class="tag">In progress / planned</span> <span class="tag">HHS Enterprise Coalition legislative report · 1 Nov 2025</span></p>
+          <p>Washington State’s <strong>Asset Verification Full Integration (AVFI)</strong> project integrates financial-institution data directly into Washington’s <strong>ACES eligibility platform</strong>, eliminating caseworker use of external vendor portals; it “positions the state for compliance with federal requirements for ex parte renewals” and “positions Washington for future system modernization and federal certification.” The regulatory backing named in the report is 42 CFR 435.916, 435.948, 435.949, 435.940. <strong>In progress / planned — NOT certified.</strong> Source: <a href="https://app.leg.wa.gov/ReportsToTheLegislature/Home/GetPDF?fileName=HHS%20Enterprise%20Coalition%20Report%20on%20IT%20Investment%20Coordination_b9fb7eaf-0508-4fbc-bf25-3debe5150609.pdf" target="_blank" rel="noopener">Washington Legislature — HHS Enterprise Coalition report (PDF) ↗</a></p>
+        </div>
       </section>
 
       <section class="about-panel" id="panel-about-sources">
