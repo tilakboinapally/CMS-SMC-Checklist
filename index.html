@@ -32,7 +32,7 @@ p{margin:0}
 @media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
 .layout{display:grid;grid-template-columns:248px 1fr;gap:20px;align-items:start;margin-top:8px}
 @media(max-width:860px){.layout{grid-template-columns:1fr}}
-.sidenav{position:sticky;top:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:10px}
+.sidecol{position:sticky;top:12px}.sidenav{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:10px}
 @media(max-width:860px){.sidenav{position:static}}
 .sidenav h3{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-family:Inter,system-ui,sans-serif;margin:4px 6px 8px}
 .navbtn{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;text-align:left;background:transparent;border:1px solid transparent;border-radius:10px;padding:11px 10px;cursor:pointer;color:var(--ink);font-weight:600;font-size:14.5px;line-height:1.3}
@@ -93,244 +93,107 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
 .flowchart a{outline:none}
 [id]{scroll-margin-top:70px}
 @media print{.controls{display:none} details.item{break-inside:avoid} }
+
+.about-panel{display:none}
+.about-panel.active{display:block}
+.backlink{background:none;border:none;padding:0;color:var(--teal);font-weight:700;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:2px;margin-bottom:4px}
+.ffpbanner{background:var(--navy);color:#fff;border-radius:var(--radius);padding:12px 16px;font-size:14.5px;margin:6px 0 18px}
+@media(prefers-color-scheme:dark){.ffpbanner{background:#24332f;color:var(--ink)}}
+.dashgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:900px){.dashgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.dashgrid{grid-template-columns:1fr}}
+.tile{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;cursor:pointer;color:var(--ink)}
+.tile:hover{border-color:var(--teal)}
+.tile b{font-size:30px;line-height:1;font-family:Georgia,serif}
+.tile .tname{font-weight:700;font-size:15px;line-height:1.3}
+.tile .tstat{font-size:13px;color:var(--muted)}
+.menutoggle{display:none;width:100%;min-height:44px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-weight:700;font-size:15px;margin-bottom:10px}
+@media(max-width:860px){
+.sidecol{position:static}
+.menutoggle{display:block}
+.sidenav{display:none}
+.sidenav.open{display:block}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="topbar"><span class="pill">CMS · Medicaid Enterprise Systems</span><span class="pill">Streamlined Modular Certification (SMC)</span><span class="pill">Verified 24 Nov 2026</span></div>
   <h1>CMS Streamlined Modular Certification (SMC) Checklists</h1>
-  <p class="lede">One comprehensive utility for the CMS lists a state must satisfy — the outcomes for all fourteen SMC modules: Provider Management, Claims Processing, Pharmacy Benefit Management, Eligibility and Enrollment, Financial Management, Decision Support / Data Warehouse, Encounter Processing, Long-term Services and Supports, Member Management, Prescription Drug Monitoring Program, Third-party Liability, Program Integrity, Health Information Exchange, and Electronic Visit Verification, plus the Conditions for Enhanced Funding that gate the federal match and apply to every module. Use the menu to open a module, then expand any item to see the exact CMS wording, its default metric, the federal regulation behind it, how a state proves it, and what that evidence looks like in practice. Below the lists: how the two CMS reviews (ORR and Certification Review) work, and the real state examples that are public — clearly labelled, because no state has published its per-item metric values.</p>
-
-  <div class="stats">
-    <div class="stat"><b>21</b><span>Provider Management<br>PM1 – PM21 · certification</span></div>
-    <div class="stat"><b>6</b><span>Claims Processing<br>CP1 – CP6 · certification</span></div>
-    <div class="stat"><b>9</b><span>Pharmacy Benefit Mgmt<br>PBM1 – PBM9 · certification</span></div>
-    <div class="stat"><b>27</b><span>Eligibility &amp; Enrollment<br>EE1 – EE27 · certification</span></div>
-    <div class="stat"><b>9</b><span>Financial Management<br>FM1 – FM9 · certification</span></div>
-    <div class="stat"><b>2</b><span>Decision Support / Data Warehouse<br>DSS/DW1 – DSS/DW2 · certification</span></div>
-    <div class="stat"><b>5</b><span>Encounter Processing<br>EPS1 – EPS5 · certification</span></div>
-    <div class="stat"><b>11</b><span>Long-term Services and Supports<br>LTSS1 – LTSS11 · certification</span></div>
-    <div class="stat"><b>11</b><span>Member Management<br>MM1 – MM11 · certification</span></div>
-    <div class="stat"><b>6</b><span>Prescription Drug Monitoring<br>PDMP 1 – PDMP 6 · certification</span></div>
-    <div class="stat"><b>13</b><span>Third-party Liability<br>TPL1 – TPL13 · certification</span></div>
-    <div class="stat"><b>18</b><span>Program Integrity<br>18 rows · 12 native + 6 shared</span></div>
-    <div class="stat"><b>0</b><span>Health Information Exchange<br>No CMS-required outcomes</span></div>
-    <div class="stat"><b>9</b><span>Electronic Visit Verification<br>EVV01 – EVV09 · certification</span></div>
-    <div class="stat"><b>22</b><span>Conditions for Enhanced Funding<br>CEF01 – CEF22 · shared, all modules</span></div>
-    <div class="stat"><b>169</b><span>Total items<br>21 + 6 + 9 + 27 + 9 + 2 + 5 + 11 + 11 + 6 + 13 + 18 + 9 + 22</span></div>
-  </div>
-  <p style="font-size:14px;color:var(--muted);margin:-8px 0 4px">FFP at stake: <strong>90% for build (DDI) · 75% for operations</strong> with a CMS-approved APD. &nbsp;·&nbsp; <strong>CMS publishes no pass/fail thresholds for any metric</strong> — states report the values and discuss them with CMS; they are not scored against a national benchmark.</p>
-
-  <div class="callout"><strong>About these lists — 169 items total (21 + 6 + 9 + 27 + 9 + 2 + 5 + 11 + 11 + 6 + 13 + 18 + 9 + 22).</strong> Provider Management certification is 21 items, Eligibility and Enrollment is 27, Pharmacy Benefit Management and Financial Management are 9 each, and Claims Processing is 6. Decision Support / Data Warehouse has only 2 CMS-required outcomes, and Health Information Exchange contributes 0 — CMS publishes no CMS-required outcomes for HIE (see its section). Program Integrity’s 18 rows include 6 items shared from other modules, flagged in place. The funding list is <strong>22 conditions</strong> — the live CMS page, its CSV, SMC Guidance v2.0, and an older state reproduction all list 22. The 22 CEFs are <strong>shared across ALL modules</strong> — one shared section, never duplicated per module. CMS publishes these as web tables with CSV downloads, not as a spreadsheet. The spreadsheet is the <strong>SMC Intake Form (.xlsx)</strong> — the blank workbook a state fills in with the lists (tabs: CEF · Outcomes &amp; Metrics · Required Artifacts). <strong>Verified against the CMS repo on 2026-11-24</strong> — the repo is updated quarterly, so outcomes, metrics, and citations may change.</div>
-
-  <div class="grid2">
-    <div class="card" id="how-it-fits">
-      <h3>How the lists fit together</h3>
-      <ul>
-        <li><strong>Module outcomes</strong> — module-specific. Based on statute/regulation; they form the baseline a system must meet to be certified and keep enhanced funding for operations. This page covers Provider Management (21), Claims Processing (6), Pharmacy Benefit Management (9), Eligibility and Enrollment (27), Financial Management (9), Decision Support / Data Warehouse (2), Encounter Processing (5), Long-term Services and Supports (11), Member Management (11), Prescription Drug Monitoring Program (6), Third-party Liability (13), Program Integrity (18 rows), Health Information Exchange (0 CMS-required outcomes), and Electronic Visit Verification (9).</li>
-        <li><strong>CEF</strong> — apply to <em>every</em> MES module, under 42 CFR §433.112 (build) and §433.116 (operations). One shared list of 22 — never duplicated per module. Non-applicable CEFs are marked “N/A” with justification.</li>
-        <li><strong>Process:</strong> APD approval → state populates the SMC Intake Form with all outcomes + CEFs → Operational Readiness Review (ORR) → production → Certification Review (CR). The finalized form is due at least 2 weeks before the review and becomes the official record.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>How proof works — the short version</h3>
-      <ul>
-        <li><strong>CMS does not prescribe one proof method per item.</strong> The normal package is a combination: a <strong>live system demo</strong> (pre-production at the ORR, in production at the Certification Review) + <strong>metric values in the Operational Report Workbook (ORW)</strong> + a <strong>named evidence file in the CMS Box repository</strong>, cited on the SMC Intake Form.</li>
-        <li><strong>CEFs are different:</strong> CMS says CEF criteria <em>do not require demonstrations</em> — the filed document, attestation, or third-party assessment is enough.</li>
-        <li>Only two PM metrics name a non-numeric artifact: <strong>PM9</strong> (screenshots of high-risk providers) and <strong>PM16</strong> (copies of notices). The only <strong>mandatory third-party</strong> proof is security/privacy — <strong>CEF09 / CEF12</strong>.</li>
-        <li><strong>“N/A” is a formal adjudication, not an omission</strong> — the state marks it on the Intake Form with a written justification, for both reviews (see the reviews section below).</li>
-      </ul>
-      <p style="margin-top:10px">The full six-method taxonomy and the ORR/CR mechanics are in the next section. State examples are in their own section below the lists, labelled as vendor claims or procurement documents — CMS itself publishes <strong>no state-specific PM outcomes and no state metric values</strong> (verified 24 Nov 2026).</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Important: the old checklist is retired</h3>
-    <p>The Medicaid Enterprise Certification Toolkit (MECT) — including its 2007 Chapter 5 “Provider Management Checklist” — was <strong>sunset by CMS on 14 April 2022</strong> (SMD #22-001). States were told not to use MECT/MEET for MES projects started after that date. SMC + the two lists below are the current mechanism. Current guidance and training should use SMC, not MECT.</p>
-  </div>
-
-  <h2 id="process-flow" style="margin-top:30px">The SMC process at a glance</h2>
-  <p style="color:var(--muted);font-size:14.5px;max-width:840px;margin-bottom:12px">Tap any stage to jump to the part of this page that explains it.</p>
-  <div class="card" style="padding:18px 16px 12px">
-  <svg class="flowchart" viewBox="0 0 680 772" role="img" aria-label="SMC certification process flowchart: APD approval, Intake Form, Operational Readiness Review, go-live, Certification Review, certified" font-family="Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
-    <defs>
-      <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--muted)"/></marker>
-    </defs>
-    <a href="#how-it-fits"><title>Jump to: How the lists fit together</title>
-      <g><rect class="fnode" x="40" y="8" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
-      <circle cx="72" cy="54" r="17" style="fill:var(--teal)"/><text x="72" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">1</text>
-      <text x="102" y="40" font-size="16.5" font-weight="700" style="fill:var(--ink)">APD approved</text>
-      <text x="102" y="63" font-size="13" style="fill:var(--muted)">CMS approves the Advance Planning Document</text>
-      <text x="102" y="84" font-size="13" style="fill:var(--muted)">90% federal match for build (DDI) · 75% for operations</text>
-      <text x="624" y="60" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
-    </a>
-    <line x1="340" y1="100" x2="340" y2="138" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
-    <a href="#proof-methods"><title>Jump to: How a state proves it — the six proof methods</title>
-      <g><rect class="fnode" x="40" y="140" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
-      <circle cx="72" cy="186" r="17" style="fill:var(--teal)"/><text x="72" y="191" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">2</text>
-      <text x="102" y="172" font-size="16.5" font-weight="700" style="fill:var(--ink)">SMC Intake Form populated</text>
-      <text x="102" y="195" font-size="13" style="fill:var(--muted)">State lists every outcome + all 22 CEFs, with the evidence named</text>
-      <text x="102" y="216" font-size="13" style="fill:var(--muted)">Finalised form due at least 2 weeks before each review</text>
-      <text x="624" y="192" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
-    </a>
-    <line x1="340" y1="232" x2="340" y2="270" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
-    <a href="#reviews"><title>Jump to: The two reviews — ORR vs. Certification Review</title>
-      <g><rect class="fnode" x="40" y="272" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
-      <circle cx="72" cy="318" r="17" style="fill:var(--teal)"/><text x="72" y="323" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">3</text>
-      <text x="102" y="304" font-size="16.5" font-weight="700" style="fill:var(--ink)">Operational Readiness Review (ORR)</text>
-      <text x="102" y="327" font-size="13" style="fill:var(--muted)">Pre-production, after most UAT · evidence due 2 weeks before</text>
-      <text x="102" y="348" font-size="12.5" font-style="italic" style="fill:var(--amber)">Gate: ready? If not — remediate and re-review.</text>
-      <text x="624" y="324" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
-    </a>
-    <line x1="340" y1="364" x2="340" y2="402" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
-    <a href="#controls" onclick="showModule('PM');return false;"><title>Jump to: the module checklists (Provider Management)</title>
-      <g><rect class="fnode" x="40" y="404" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
-      <circle cx="72" cy="450" r="17" style="fill:var(--teal)"/><text x="72" y="455" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">4</text>
-      <text x="102" y="436" font-size="16.5" font-weight="700" style="fill:var(--ink)">Go-live — system in production</text>
-      <text x="102" y="459" font-size="13" style="fill:var(--muted)">Metric values start flowing into the ORW, monthly</text>
-      <text x="102" y="480" font-size="13" style="fill:var(--muted)">From here the outcomes are measured, not just demonstrated</text>
-      <text x="624" y="456" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
-    </a>
-    <line x1="340" y1="496" x2="340" y2="534" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
-    <text x="352" y="522" font-size="12.5" style="fill:var(--muted)">≥ 6 months in production</text>
-    <a href="#reviews-table"><title>Jump to: the ORR vs. Certification Review table</title>
-      <g><rect class="fnode" x="40" y="536" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
-      <circle cx="72" cy="582" r="17" style="fill:var(--teal)"/><text x="72" y="587" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">5</text>
-      <text x="102" y="568" font-size="16.5" font-weight="700" style="fill:var(--ink)">Certification Review (CR)</text>
-      <text x="102" y="591" font-size="13" style="fill:var(--muted)">Live production demo — no test data · ORW values, 2 weeks before</text>
-      <text x="102" y="612" font-size="12.5" font-style="italic" style="fill:var(--amber)">Gate: achieved? If not — CMS follows up on remediations first.</text>
-      <text x="624" y="588" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
-    </a>
-    <line x1="340" y1="628" x2="340" y2="666" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
-    <a href="#state-examples"><title>Jump to: State examples — what states have actually done</title>
-      <g><rect class="fnode" x="40" y="668" width="600" height="92" rx="14" style="fill:var(--teal);stroke:var(--teal);stroke-width:1.5"/>
-      <circle cx="72" cy="714" r="17" fill="#fff"/><text x="72" y="719" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--teal)">6</text>
-      <text x="102" y="700" font-size="16.5" font-weight="700" fill="#fff">Certified</text>
-      <text x="102" y="723" font-size="13" fill="#fff" opacity="0.9">Certification letter + report</text>
-      <text x="102" y="744" font-size="13" fill="#fff" opacity="0.9">75% ops match, backdated to the quarter after go-live</text>
-      <text x="624" y="720" text-anchor="end" font-size="22" fill="#fff">›</text></g>
-    </a>
-  </svg>
-  <p style="font-size:13.5px;color:var(--muted);margin:6px 4px 4px">After certification: monthly ORW reporting + OAPD updates. CEFs aren’t re-demonstrated at CR unless something changed, a new DR test ran, or a new security assessment is due. · <a href="https://raw.githubusercontent.com/tilakboinapally/CMS-SMC-Checklist/main/smc-process-flowchart.svg" target="_blank" rel="noopener">Download this flowchart as a standalone SVG (for slides)</a></p>
-  </div>
-
-  <h2 id="proof-methods" style="margin-top:30px">How a state proves it — the six proof methods CMS uses (all modules)</h2>
-  <p style="color:var(--muted);font-size:14.5px;max-width:840px;margin-bottom:12px">From SMC Guidance v2.0 and the MES Certification Repository. This taxonomy applies to <strong>all modules</strong> on this page — Provider Management, Claims Processing, Pharmacy Benefit Management, Eligibility and Enrollment, Financial Management, Decision Support / Data Warehouse, Encounter Processing, Long-term Services and Supports, Member Management, Prescription Drug Monitoring Program, Third-party Liability, Program Integrity, and Electronic Visit Verification, plus the shared CEFs. Almost every outcome item is proved by a <strong>combination</strong> — the per-item panels below give the primary method first, then what it looks like in practice.</p>
-  <div class="card" style="padding:6px 16px">
-    <table>
-      <tr><th style="width:190px">Method</th><th>What it is</th><th style="width:230px">Where CMS defines it</th></tr>
-      <tr><td><strong>A · Metric report (ORW)</strong></td><td>Numerical values, by month, in the Operational Report Workbook. Metric definitions are agreed in the APD/Intake Form; values run from go-live to the most recent month-end for the Certification Review, then monthly thereafter and with every OAPD.</td><td>SMC Guidance §§3, 6.1.1; FAQs Q31–Q38</td></tr>
-      <tr><td><strong>B · Live system demo</strong></td><td>State staff/SMEs walk the CMS Certification Team through the function — pre-production/test environment at the ORR; <strong>live production environment at the CR, with no test data entered</strong>.</td><td>SMC Guidance §§5.1, 6.1; FAQs Q6, Q21</td></tr>
-      <tr><td><strong>C · Screenshots</strong></td><td>Screen prints filed <strong>unredacted</strong> in Box and named on the Intake Form. Only PM9 names screenshots in its default metric; they are also routine supporting evidence for CEF10 (business-rules engine) and security evidence.</td><td>PM page (PM9); CEF page (CEF10); CEF Tips</td></tr>
-      <tr><td><strong>D · Document / sample artifact</strong></td><td>A named file in Box: a copy, list, report, plan, contract clause, APD section, or test result. The dominant CEF method, and the explicit method for PM16 (copies of notices) and the PM lists (PM10, PM19, PM20).</td><td>SMC Guidance §4.1; CEF “Example Evidence” column</td></tr>
-      <tr><td><strong>E · Third-party assessment</strong></td><td>An independent assessor (never the DDI vendor/organisation) assesses security/privacy controls: Security Assessment Report + penetration test + vulnerability scans + POA&amp;M. Required for CEF09 and CEF12, and an entry criterion for both reviews.</td><td>SMC Guidance App. C; 45 CFR 95.621(f)</td></tr>
-      <tr><td><strong>F · State self-attestation</strong></td><td>The state attests in the APD and/or Intake Form, with no separate file — named expressly for CEF02, CEF03 (alternative), CEF08, CEF11 (alternative), CEF22 (alternative). FAQ Q20 adds the outcome-side equivalent: some outcomes may require only an attestation or a demo, agreed in advance with the CMS MES State Officer.</td><td>CEF page; FAQs Q20, Q34–Q35</td></tr>
-    </table>
-  </div>
-  <div class="grid2">
-    <div class="card">
-      <h3>The 169 items, grouped by primary proof</h3>
-      <ul>
-        <li><strong>Metric (ORW) + live demo — most outcome items:</strong> 19 of 21 PM items (PM1–PM8, PM10–PM15, PM17–PM21; PM14 and PM17 partly reuse existing reporting; PM9 adds screenshots; PM16 is artifact-first), all of CP1–CP5, and PBM1–PBM4.</li>
-        <li><strong>Metric report (ORW), with demo or attestation where CMS names them — most E&amp;E items:</strong> EE1, EE3, EE5, EE11 pair the ORW report with a live demo; EE2 adds user surveys and an attestation of skip logic; EE10, EE20 and EE25 are attestation-led (with test results and/or a sub-production demo); EE6–EE9, EE12–EE14, EE17–EE19, EE21, EE23, EE24, EE26 and EE27 are ORW metric reports; EE22’s FFE transfer rates come from the <strong>CMS Weekly AT Report</strong> (the state does not supply that data).</li>
-        <li><strong>PERM results — EE4, EE15, EE16:</strong> where CMS names them, the most recent PERM results (plus, for EE4, the internal QA description/reports, and for EE15 an attestation, test results, and sub-production demo) are the evidence.</li>
-        <li><strong>Metric report (ORW) / filed aging report — FM items:</strong> FM1, FM2, FM4, FM7, FM8 and FM9 are ORW metric reports (FM1 adds a demo of the payment/recoupment calculation); FM5 and FM6 are proved by the repayment / TPL recovery <strong>aging report</strong> filed with CMS; FM3 is a pass/fail retention demonstration.</li>
-        <li><strong>Document / sample-report artifact + live demo — PBM5, PBM7, PBM8, PBM9:</strong> where the metric says “Provide a sample report” or “Provide a copy,” the state files the artifact in CMS’s Box repository and demos the function live.</li>
-        <li><strong>Pass/fail retention demonstration + metric report — CP6:</strong> the state demonstrates 100% retention for the required periods (3 / 5 / 6 / 10 years from closure of all related actions).</li>
-        <li><strong>Document / APD / contract — 9 CEFs:</strong> CEF01, CEF05, CEF06, CEF07, CEF11, CEF13, CEF19, CEF20, CEF21.</li>
-        <li><strong>Self-attestation (alone or as stated alternative) — 5 CEFs:</strong> CEF02, CEF03, CEF08, CEF11, CEF22.</li>
-        <li><strong>Third-party assessment — 2 CEFs:</strong> CEF09, CEF12 (CEF18’s DR-test deficiencies feed the same POA&amp;M).</li>
-        <li><strong>Refer-to-outcomes / N/A-prone — 4 CEFs:</strong> CEF04, CEF14, CEF16, CEF17 (CEF17 is always N/A for a PM module).</li>
-        <li><strong>Metric / federal reporting — 2 CEFs:</strong> CEF15, CEF22.</li>
-        <li><strong>Metric report (ORW) + live demo — most of the nine added modules:</strong> DSS/DW1–DSS/DW2, EPS1–EPS2, LTSS1, LTSS2, LTSS5, LTSS7, LTSS9–LTSS11 (LTSS9–LTSS11 pair an average-days / trend metric with capability demos), MM1, MM6–MM8, MM11, PDMP1, PDMP5, PDMP6, TPL1–TPL11 and TPL13, PI1, PI2, PI4–PI8, PI10, PI11, and the borrowed PM11, PM17, PM18 in the PI list.</li>
-        <li><strong>Live demo only — pass/fail capability and “Verify…” checks:</strong> LTSS3, LTSS4, LTSS6, LTSS8 (no computable count — the demo <em>is</em> the proof), MM3 and MM4 (the metric restates the rule), PDMP2 (CMS publishes no metric at all), EPS4 (demo + attestation), and PI3 / PI12 (demo plus an ad-hoc report sample).</li>
-        <li><strong>Document / sample artifact in CMS Box — where the metric says “provide a copy / copies / sample”:</strong> EPS3 (managed-care contract clauses), EPS5 (filed federal reports), MM2, MM5, MM9 (sample notices), MM10 (directory extract), PDMP3 (interstate data-sharing agreements), PDMP4 (access-issues report), TPL12 (agreements + periodic risk analysis), PI9 (RAC report), and the borrowed FM5 (repayment aging report) and PBM9 (sample report) in the PI list.</li>
-        <li><strong>EVV evidence — test reports, screenshots, explanations, training records:</strong> EVV01–EVV09 are proved with automated test reports, screenshots, written explanations, and training materials, with a demonstration in the <strong>production environment</strong> at the Certification Review. The measures are the four named metrics on the EVV module page — <em>not</em> the placeholder Metric IDs in the EVV Intake Form (see the EVV section).</li>
-        <li><strong>HIE — no items to group:</strong> CMS publishes no CMS-required outcomes for HIE, so there is nothing to prove against a CMS list; states define their own outcomes and metrics (see the HIE section).</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Three rules that govern every method</h3>
-      <ul>
-        <li><strong>Evidence ≠ Required Artifacts.</strong> Evidence demonstrates an outcome or condition; Required Artifacts (Certification Request Letter, System Acceptance Letter, Monthly Project Status Reports, Master Test Plan, Test Summary Reports, Deployment Plan, Defect/Risk/Issue Lists) describe the project’s progression and are not typically used as evidence.</li>
-        <li><strong>Cite the exact Box filename</strong> (not a hyperlink) in the Intake Form evidence column, pointing to the relevant section of long documents. A state may reuse existing DDI/RFP deliverables as evidence — no separate “wraparound” file is needed. CEF files must not be redacted, including screenshots/reports containing PHI/PII.</li>
-        <li><strong>Not every outcome needs a metric</strong> (FAQ Q20): one metric may serve multiple outcomes, and a state may propose alternative metrics to its State Officer — but must do so before reporting them in the OAPD. Any change to outcomes/metrics requires an APD-Update.</li>
-      </ul>
-    </div>
-  </div>
-
-  <h2 id="reviews" style="margin-top:30px">The two reviews — ORR vs. Certification Review (all modules)</h2>
-  <p style="color:var(--muted);font-size:14.5px;max-width:840px;margin-bottom:12px">The same Intake Form is adjudicated twice for every module: once before go-live, once after at least six months in production.</p>
-  <div class="card" id="reviews-table" style="padding:6px 16px">
-    <table>
-      <tr><th style="width:170px"></th><th>Operational Readiness Review (ORR)</th><th>Certification Review (CR)</th></tr>
-      <tr><td><strong>When</strong></td><td>Pre-production, before go-live, after most UAT is complete.</td><td>System in production ≥ 6 months; CMS advises scheduling toward the end of month 7 after go-live, to allow time to pull metrics.</td></tr>
-      <tr><td><strong>Question it answers</strong></td><td>Is the system production-ready, and will it achieve the outcomes / support metric collection?</td><td>Has the system in production achieved the outcomes, as assessed by metrics? (Impact, not just functionality.)</td></tr>
-      <tr><td><strong>Entry criteria</strong></td><td>8 items, incl. latest draft Intake Form with all CMS-required outcomes + N/A justifications; UAT completion date; security assessment (SAR) and pen-test results within 2 years; POA&amp;M with all critical vulnerabilities resolved or an approved risk-acceptance plan.</td><td>11 items: the ORR set, plus the ORW with metric data back to go-live; Certification Request Letter; System Acceptance Letter (acceptance date must precede the CR); and T-MSIS Outcomes-Based Assessment (OBA) compliance, confirmed with the CMS T-MSIS team.</td></tr>
-      <tr><td><strong>Evidence due</strong></td><td>Finalised Intake Form + unredacted evidence + Required Artifacts + ORW (metric <em>definitions</em>) in Box, <strong>2 weeks before</strong>. CMS’s Information Request Listing (IRL) follows 1 week before.</td><td>Same, 2 weeks before, plus the ORW with <strong>metric values</strong> (≥ 6 months, or back to the retroactive certification date).</td></tr>
-      <tr><td><strong>Demonstrations</strong></td><td>Module demos in a pre-production/test environment, after programme overview and training/testing/defect status.</td><td>Production demos in the <strong>live production environment — no test data</strong> — then a metrics review (numbers, anomalies, methodology changes).</td></tr>
-      <tr><td><strong>What “pass” looks like</strong></td><td>Applicable CEFs met/attested in the APD; outcome functionality developed <em>and tested</em> per the Master Test Plan; the system will support ORW metric collection/reporting.</td><td>The system <em>has achieved</em> the approved CMS-required + state-specific outcomes/metrics in production.</td></tr>
-      <tr><td><strong>What comes back</strong></td><td>Intake Form returned <strong>within 1 week</strong> with CMS comments/adjudication + a tear-out of observations, recommendations, and action items.</td><td>Updated Intake Form, the <strong>certification report, and the certification letter</strong>. 75% FFP for operations is then claimable retroactive to the first day of the calendar quarter following implementation.</td></tr>
-    </table>
-  </div>
-  <div class="grid2">
-    <div class="card">
-      <h3>Who reviews the evidence</h3>
-      <ul>
-        <li><strong>CMS MES State Officer</strong> — the state’s standing CMS contact: APD approval, outcome/metric finalisation, monthly project-status reports, entry-criteria confirmation, T-MSIS liaison, post-certification reporting.</li>
-        <li><strong>CMS Certification Team</strong> — runs the ORR and CR, sends the IRL, questions the demos, and records its evaluation/adjudication on the Intake Form.</li>
-        <li><strong>CMS T-MSIS team</strong> (via the State Officer) — confirms OBA compliance for CR entry.</li>
-        <li><strong>Independent third-party security/privacy assessor</strong> — not a CMS reviewer, but its SAR/pen-test/POA&amp;M is required evidence; the assessor organisation cannot be the one performing DDI.</li>
-        <li><strong>No IV&amp;V is required by SMC itself</strong> — states often procure it separately (see Missouri in the state examples).</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Adjudication &amp; “N/A with justification”</h3>
-      <ul>
-        <li>The Intake Form is the official record: the state fills the State ORR/CR Evidence and Comments columns; the Certification Team records its adjudication in the CMS columns.</li>
-        <li>The only adjudication labels CMS publishes verbatim are the EVV ones: <strong>“Evidence Satisfactory,” “Evidence Not Satisfactory,” and “Not Applicable.”</strong> CMS has not published a separate general-SMC label list. “Not Satisfactory” does not automatically mean denial — CMS follows up on remediations before assembling the certification package.</li>
-        <li><strong>N/A rule:</strong> mark “N/A” in the State ORR <em>and</em> CR Evidence columns and justify it in the Comments column <em>for both reviews</em> — CMS must accept the justification. CMS’s own worked example: <em>CEF17 is an Eligibility &amp; Enrollment condition and does not apply to a Provider Management module.</em></li>
-        <li>A CEF met at ORR need not be re-demonstrated at CR unless there are significant changes, a long time-lapse, a new annual DR test, or a new biennial security assessment.</li>
-      </ul>
-    </div>
-  </div>
-
   <div class="controls" id="controls">
     <div class="controls-row">
-      <input class="search" id="search" type="search" placeholder="Search the open module — try “screening”, “prior authorization”, “rebate”, “security”…" aria-label="Search requirements"/>
+      <input class="search" id="search" type="search" placeholder="Search modules and items — try “prior authorization”, “screening”, “rebate”, “security”…" aria-label="Search requirements"/>
       <select id="catSelect" aria-label="Filter by category"><option value="">All categories</option></select>
     </div>
     <div class="countline" id="countline"></div>
   </div>
 
   <div class="layout">
-    <nav class="sidenav" aria-label="SMC modules">
-      <h3>Modules — 169 items</h3>
-      <button class="navbtn active" data-module="PM">Provider Management <span class="ncount">21</span></button>
-      <button class="navbtn" data-module="CP">Claims Processing <span class="ncount">6</span></button>
-      <button class="navbtn" data-module="PBM">Pharmacy Benefit Management <span class="ncount">9</span></button>
-      <button class="navbtn" data-module="EE">Eligibility and Enrollment <span class="ncount">27</span></button>
-      <button class="navbtn" data-module="FM">Financial Management <span class="ncount">9</span></button>
-      <button class="navbtn" data-module="DSS">Decision Support / Data Warehouse <span class="ncount">2</span></button>
-      <button class="navbtn" data-module="EPS">Encounter Processing <span class="ncount">5</span></button>
-      <button class="navbtn" data-module="LTSS">Long-term Services and Supports <span class="ncount">11</span></button>
-      <button class="navbtn" data-module="MM">Member Management <span class="ncount">11</span></button>
-      <button class="navbtn" data-module="PDMP">Prescription Drug Monitoring Program <span class="ncount">6</span></button>
-      <button class="navbtn" data-module="TPL">Third-party Liability <span class="ncount">13</span></button>
-      <button class="navbtn" data-module="PI">Program Integrity <span class="ncount">18</span></button>
-      <button class="navbtn" data-module="HIE">Health Information Exchange <span class="ncount">0</span></button>
-      <button class="navbtn" data-module="EVV">Electronic Visit Verification <span class="ncount">9</span></button>
-      <button class="navbtn" data-module="AVS">Asset Verification System <span class="ncount">0</span></button>
-      <button class="navbtn" data-module="CEF">Conditions for Enhanced Funding <span class="ncount">22</span></button>
-      <p class="navnote">CEFs are shared across <strong>all</strong> modules — one shared list, shown once. Prior authorization is <strong>not</strong> a standalone module: it appears as CP3 (medical services) and PBM6 (pharmacy).</p>
-    </nav>
+    <div class="sidecol">
+      <button class="menutoggle" id="menutoggle" aria-expanded="false" aria-controls="sidenav">☰ Menu</button>
+      <nav class="sidenav" id="sidenav" aria-label="SMC modules and guidance">
+        <h3>All modules</h3>
+        <button class="navbtn active" data-view="dashboard">All modules — dashboard <span class="ncount">169</span></button>
+        <h3>Modules — 169 items</h3>
+        <button class="navbtn" data-module="PM">Provider Management <span class="ncount">21</span></button>
+        <button class="navbtn" data-module="CP">Claims Processing <span class="ncount">6</span></button>
+        <button class="navbtn" data-module="PBM">Pharmacy Benefit Management <span class="ncount">9</span></button>
+        <button class="navbtn" data-module="EE">Eligibility and Enrollment <span class="ncount">27</span></button>
+        <button class="navbtn" data-module="FM">Financial Management <span class="ncount">9</span></button>
+        <button class="navbtn" data-module="DSS">Decision Support / Data Warehouse <span class="ncount">2</span></button>
+        <button class="navbtn" data-module="EPS">Encounter Processing <span class="ncount">5</span></button>
+        <button class="navbtn" data-module="LTSS">Long-term Services and Supports <span class="ncount">11</span></button>
+        <button class="navbtn" data-module="MM">Member Management <span class="ncount">11</span></button>
+        <button class="navbtn" data-module="PDMP">Prescription Drug Monitoring Program <span class="ncount">6</span></button>
+        <button class="navbtn" data-module="TPL">Third-party Liability <span class="ncount">13</span></button>
+        <button class="navbtn" data-module="PI">Program Integrity <span class="ncount">18</span></button>
+        <button class="navbtn" data-module="HIE">Health Information Exchange <span class="ncount">0</span></button>
+        <button class="navbtn" data-module="EVV">Electronic Visit Verification <span class="ncount">9</span></button>
+        <button class="navbtn" data-module="AVS">Asset Verification System <span class="ncount">0</span></button>
+        <button class="navbtn" data-module="CEF">Conditions for Enhanced Funding <span class="ncount">22</span></button>
+        <p class="navnote">CEFs are shared across <strong>all</strong> modules — one shared list, shown once. Prior authorization is <strong>not</strong> a standalone module: it appears as CP3 (medical services) and PBM6 (pharmacy).</p>
+        <h3>About &amp; guidance</h3>
+        <button class="navbtn" data-about="lists">About these lists</button>
+        <button class="navbtn" data-about="process">The SMC process</button>
+        <button class="navbtn" data-about="proof">How a state proves it</button>
+        <button class="navbtn" data-about="reviews">The two reviews — ORR vs. Certification Review</button>
+        <button class="navbtn" data-about="fit">How the lists fit together</button>
+        <button class="navbtn" data-about="examples">State examples</button>
+        <button class="navbtn" data-about="sources">Sources &amp; verification</button>
+      </nav>
+    </div>
     <div>
-      <section class="module-panel active" id="panel-PM">
+      <section class="module-panel active" id="panel-dashboard">
+        <div class="sectionhead" style="margin-top:0"><div><h2>All modules — 169 items</h2><p>Pick a module below to see its checklist.</p></div></div>
+        <div class="ffpbanner">FFP at stake: <strong>90% for build (DDI) · 75% for operations</strong> with a CMS-approved APD.</div>
+        <div class="dashgrid" id="dashgrid">
+          <button class="tile" data-module="PM" data-title="Provider Management"><span class="tname">Provider Management</span><b>21</b><span class="tstat">Certification · PM1–PM21</span></button>
+          <button class="tile" data-module="CP" data-title="Claims Processing"><span class="tname">Claims Processing</span><b>6</b><span class="tstat">Certification · CP1–CP6</span></button>
+          <button class="tile" data-module="PBM" data-title="Pharmacy Benefit Management"><span class="tname">Pharmacy Benefit Management</span><b>9</b><span class="tstat">Certification · PBM1–PBM9</span></button>
+          <button class="tile" data-module="EE" data-title="Eligibility and Enrollment"><span class="tname">Eligibility and Enrollment</span><b>27</b><span class="tstat">Certification · EE1–EE27</span></button>
+          <button class="tile" data-module="FM" data-title="Financial Management"><span class="tname">Financial Management</span><b>9</b><span class="tstat">Certification · FM1–FM9</span></button>
+          <button class="tile" data-module="DSS" data-title="Decision Support / Data Warehouse"><span class="tname">Decision Support / Data Warehouse</span><b>2</b><span class="tstat">Certification · DSS/DW1–DSS/DW2</span></button>
+          <button class="tile" data-module="EPS" data-title="Encounter Processing"><span class="tname">Encounter Processing</span><b>5</b><span class="tstat">Certification · EPS1–EPS5</span></button>
+          <button class="tile" data-module="LTSS" data-title="Long-term Services and Supports"><span class="tname">Long-term Services and Supports</span><b>11</b><span class="tstat">Certification · LTSS1–LTSS11</span></button>
+          <button class="tile" data-module="MM" data-title="Member Management"><span class="tname">Member Management</span><b>11</b><span class="tstat">Certification · MM1–MM11</span></button>
+          <button class="tile" data-module="PDMP" data-title="Prescription Drug Monitoring Program"><span class="tname">Prescription Drug Monitoring Program</span><b>6</b><span class="tstat">Certification · PDMP 1–PDMP 6</span></button>
+          <button class="tile" data-module="TPL" data-title="Third-party Liability"><span class="tname">Third-party Liability</span><b>13</b><span class="tstat">Certification · TPL1–TPL13</span></button>
+          <button class="tile" data-module="PI" data-title="Program Integrity"><span class="tname">Program Integrity</span><b>18</b><span class="tstat">18 rows · 12 native + 6 shared</span></button>
+          <button class="tile" data-module="HIE" data-title="Health Information Exchange"><span class="tname">Health Information Exchange</span><b>0</b><span class="tstat">No CMS-required outcomes</span></button>
+          <button class="tile" data-module="EVV" data-title="Electronic Visit Verification"><span class="tname">Electronic Visit Verification</span><b>9</b><span class="tstat">Certification · EVV01–EVV09</span></button>
+          <button class="tile" data-module="AVS" data-title="Asset Verification System"><span class="tname">Asset Verification System</span><b>0</b><span class="tstat">No CMS-required outcomes</span></button>
+          <button class="tile" data-module="CEF" data-title="Conditions for Enhanced Funding"><span class="tname">Conditions for Enhanced Funding</span><b>22</b><span class="tstat">Shared, all modules · CEF01–CEF22</span></button>
+        </div>
+      </section>
+
+      <section class="module-panel" id="panel-PM">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Provider Management — CMS-Required Outcomes</h2><p>Verbatim outcome statements from the CMS MES Certification Repository. Categories in the left label area are CMS’s own groupings as printed on the page. Regulatory source is shown exactly as CMS prints it — including two CMS typos, flagged in PM3 and PM8.</p></div><a href="https://cmsgov.github.io/CMCS-DSG-DSS-Certification/Outcomes%20and%20Metrics/Provider%20Management%20(PM)/" target="_blank" rel="noopener">Open CMS source ↗</a></div>
         <div id="pmList"></div>
       </section>
 
       <section class="module-panel" id="panel-CP">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Claims Processing — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). Titles are CMS’s own. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div class="pa-note"><strong>Prior authorization is NOT a standalone CMS module.</strong> CMS lists it in two places: <strong>CP3</strong> here (prior authorization for medical services) and <strong>PBM6</strong> in Pharmacy Benefit Management (pharmacy prior authorization: 24-hour response, 72-hour emergency supply) — both citing SSA 1927(d)(5). <button class="xlink" onclick="jumpTo('PBM6')">Go to PBM6 — pharmacy prior authorization →</button></div>
         <div id="cpList"></div>
@@ -349,6 +212,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-PBM">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Pharmacy Benefit Management — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items, only IDs (PBM1–PBM9)</strong> — the short labels shown are descriptive labels added here for navigation, <strong>NOT CMS titles</strong>. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div class="pa-note"><strong>Prior authorization is NOT a standalone CMS module.</strong> CMS lists it in two places: <strong>PBM6</strong> here (pharmacy prior authorization: 24-hour response, 72-hour emergency supply) and <strong>CP3</strong> in Claims Processing (prior authorization for medical services) — both citing SSA 1927(d)(5). <button class="xlink" onclick="jumpTo('CP3')">Go to CP3 — medical prior authorization →</button></div>
         <div id="pbmList"></div>
@@ -362,6 +226,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-EE">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Eligibility and Enrollment — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). The titles shown <strong>are CMS’s own</strong> — the E&amp;E list carries a title per item. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="eeList"></div>
         <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Eligibility and Enrollment</h3>
@@ -379,6 +244,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-FM">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Financial Management — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items, only IDs (FM1–FM9)</strong> — the short labels shown are descriptive labels added here for navigation, <strong>NOT CMS titles</strong>. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="fmList"></div>
         <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Financial Management</h3>
@@ -391,6 +257,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-DSS">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Decision Support / Data Warehouse — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>Only 2 CMS-required outcomes exist for this module</strong> — the DSSDW CSV is complete as published (header + 2 rows), cross-checked against the “DSS DW” sheet of <em>MES Outcomes - All.xlsx</em>. <strong>CMS gives NO titles for these items</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="dssList"></div>
         <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Decision Support / Data Warehouse</h3>
@@ -413,6 +280,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-EPS">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Encounter Processing — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items, only IDs (EPS1–EPS5)</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="epsList"></div>
         <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Encounter Processing</h3>
@@ -430,6 +298,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-LTSS">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Long-term Services and Supports — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items, only IDs (LTSS1–LTSS11)</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. Expand any item for its metric, regulation, proof method, and a plain-language practice note. Note: no LTSS metric says “provide a sample report/copy,” so the document-artifact proof path does not apply to any LTSS item.</p></div></div>
         <div id="ltssList"></div>
         <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Long-term Services and Supports</h3>
@@ -437,6 +306,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-MM">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Member Management — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items, only IDs (MM1–MM11)</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. Citation formatting is inconsistent in the CMS source (e.g. “CFR 42 438.54”) and is copied exactly as published. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="mmList"></div>
         <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Member Management</h3>
@@ -459,6 +329,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-PDMP">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Prescription Drug Monitoring Program — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). The titles shown <strong>are CMS’s own</strong> — the PDMP list’s Reference # field combines the ID and title (e.g. “PDMP 1 / Qualified PDMP”). All items rest on §1944 of the Act, added by §5042 of the SUPPORT for Patients and Communities Act (the “Medicaid PARTNERSHIP Act”). Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div class="pa-note"><strong>Scope note (SMC Guidance Table 1):</strong> a PDMP counts as a certifiable module only if the <strong>Medicaid agency owns, operates, and uses</strong> the PDMP. In most states the PDMP sits with the health department or the board of pharmacy, not Medicaid — which is why PDMP certifications are rare.</div>
         <div id="pdmpList"></div>
@@ -467,6 +338,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-TPL">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Third-party Liability — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). The titles shown <strong>are CMS’s own</strong> — the TPL list’s Reference # field combines the ID and title (e.g. “TPL1 Application”). The regulatory anchor is 42 CFR 433.136–433.140 and §1902(a)(25) of the Act (Medicaid as payer of last resort). Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div class="pa-note"><strong>Related item:</strong> <strong>FM6</strong> in Financial Management covers TPL recovery tracking (the TPL recovery aging report) from the financial side — the financial-management view of what this module covers in full. <button class="xlink" onclick="jumpTo('FM6')">Go to FM6 — TPL recovery (Financial Management) →</button></div>
         <div id="tplList"></div>
@@ -475,6 +347,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-PI">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Program Integrity — CMS-Required Outcomes</h2><p>Verbatim outcome statements, default metrics, and regulations from the CMS MES Certification Repository (_data CSVs). <strong>CMS gives NO titles for these items</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. <strong>Structure, shown faithfully:</strong> this list has 18 rows, but only <strong>PI1–PI12 are native to Program Integrity</strong>. The other 6 rows are <strong>borrowed cross-module items</strong> — CP2, FM5, PBM9, PM11, PM17, PM18 — each flagged below as “shared from” its home module, with a cross-link to the home item. Several PI items also carry CMS’s “*Applicable to CP / E&amp;E / MM / PM” notes, reproduced in the outcome text. Expand any item for its metric, regulation, proof method, and a plain-language practice note.</p></div></div>
         <div id="piList"></div>
         <h3 style="font-size:19px;margin:26px 0 4px">State Examples — Program Integrity</h3>
@@ -487,6 +360,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-HIE">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Health Information Exchange — no CMS-Required Outcomes</h2><p>This section is built differently on purpose: there is no HIE checklist to expand, because CMS does not publish one. What follows is everything CMS does say about HIE under SMC — its own statement, its definition, the capability descriptions from the HIE module page, and the state-specific material in the repository.</p></div></div>
         <div class="callout"><strong>CMS, verbatim, on the HIE module page:</strong> “None. There are no CMS-Required outcomes for HIE. For an HIE system to receive enhanced funding, states will need to identify outcomes and associated metrics that show clear benefits to their respective Medicaid programs.” There is <strong>no CMS-Required HIE CSV</strong> and <strong>no HIE sheet</strong> in <em>MES Outcomes - All.xlsx</em> — so this section invents no checklist items.</div>
         <div class="card" style="margin:12px 0">
@@ -525,6 +399,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-EVV">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Electronic Visit Verification — CMS-Required Outcomes</h2><p>Verbatim outcome statements from the pre-populated <strong>SMC Intake Form for EVV (.xlsx)</strong> and the EVV module page — <strong>no CMS-Required EVV CSV exists</strong>. <strong>CMS gives NO titles for these items, only IDs (EVV01–EVV09)</strong> — the short labels shown are derived from the wording and marked as such; they are <strong>NOT CMS titles</strong>. The “regulation” line for each item is the source CMS cites for it (statute, Medicaid Best Practice, or MITA maturity level). Expand any item for its metric, source, proof method, and a plain-language practice note.</p></div></div>
         <div class="callout"><strong>History:</strong> EVV outcomes-based certification (OBC) was <strong>sunset by SHO letter #25-003 (August 6, 2025)</strong> and folded into SMC; the old 11-criteria / 5-KPI OBC scheme is pre-SMC and superseded. EVV modules must address <strong>all 22 CEFs</strong> — CEF09 and CEF12 replace the old EVV Security outcomes. Operational Report Workbooks are due <strong>quarterly at minimum</strong> for EVV. One numbering caution: SMC Guidance §6.1 cites the old OBC numbering (EVV1, EVV3, EVV4, EVV5, EVV7, EVV8) — it is shown as published and is <strong>not</strong> mapped onto EVV01–EVV09 here.</div>
         <div class="callout"><strong>Metric anomaly — flagged, not hidden:</strong> the .xlsx Intake Form’s “Metric ID” column is a <strong>placeholder / copy-paste artifact</strong> — EVV01–EVV06 all list the same three IDs, and EVV07–EVV09 the same single ID. Those placeholder IDs are <strong>not</strong> shown as metrics on this page. The authoritative measures are the <strong>four named metrics</strong> from the EVV module page, in the table below. <strong>No target or benchmark values are published for any of the four.</strong></div>
@@ -554,6 +429,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-AVS">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Asset Verification System — no CMS-Required Outcomes</h2><p>This section is built differently on purpose: there is no AVS checklist to expand, because CMS does not publish one. What follows is everything the record does say — the evidence that no outcomes list exists, what an Asset Verification System is and the law behind it, where AVS actually lives inside the SMC structure, and the two state examples in the public record.</p></div></div>
         <div class="callout"><strong>CMS has published no CMS-required outcomes for Asset Verification System as a standalone SMC module — so this section invents no checklist items, and AVS contributes 0 items to the 169-item total.</strong> The evidence that nothing is published:
           <ul style="margin:8px 0 0 18px;padding:0;display:grid;gap:6px">
@@ -584,14 +460,199 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
 
       <section class="module-panel" id="panel-CEF">
+        <button class="backlink" onclick="showDashboard()">← All modules</button>
         <div class="sectionhead" style="margin-top:0"><div><h2>Conditions for Enhanced Funding — shared across ALL modules</h2><p>Verbatim conditions from the live CMS CEF page (42 CFR §433.112). These 22 conditions apply to <strong>every</strong> MES module — Provider Management, Claims Processing, Pharmacy Benefit Management, and all others — so they appear once here, never duplicated per module. The theme labels are an organisational grouping added here for navigation — CMS publishes the CEFs as one flat list of 22. Evidence is condensed; full text is on the source page.</p></div><a href="https://cmsgov.github.io/CMCS-DSG-DSS-Certification/Conditions%20for%20Enhanced%20Funding/CEFs/" target="_blank" rel="noopener">Open CMS source ↗</a></div>
         <div id="cefList"></div>
       </section>
-      <div class="empty" id="empty">No items match that search in this module. Try a shorter term or clear the category filter.</div>
+      <section class="about-panel" id="panel-about-lists">
+        <div class="sectionhead" style="margin-top:0"><div><h2>About these lists</h2></div></div>
+  <p class="lede">One comprehensive utility for the CMS lists a state must satisfy — the outcomes for all fourteen SMC modules: Provider Management, Claims Processing, Pharmacy Benefit Management, Eligibility and Enrollment, Financial Management, Decision Support / Data Warehouse, Encounter Processing, Long-term Services and Supports, Member Management, Prescription Drug Monitoring Program, Third-party Liability, Program Integrity, Health Information Exchange, and Electronic Visit Verification, plus the Conditions for Enhanced Funding that gate the federal match and apply to every module. Use the menu to open a module, then expand any item to see the exact CMS wording, its default metric, the federal regulation behind it, how a state proves it, and what that evidence looks like in practice. Below the lists: how the two CMS reviews (ORR and Certification Review) work, and the real state examples that are public — clearly labelled, because no state has published its per-item metric values.</p>
+
+  <div class="callout"><strong>About these lists — 169 items total (21 + 6 + 9 + 27 + 9 + 2 + 5 + 11 + 11 + 6 + 13 + 18 + 9 + 22).</strong> Provider Management certification is 21 items, Eligibility and Enrollment is 27, Pharmacy Benefit Management and Financial Management are 9 each, and Claims Processing is 6. Decision Support / Data Warehouse has only 2 CMS-required outcomes, and Health Information Exchange contributes 0 — CMS publishes no CMS-required outcomes for HIE (see its section). Program Integrity’s 18 rows include 6 items shared from other modules, flagged in place. The funding list is <strong>22 conditions</strong> — the live CMS page, its CSV, SMC Guidance v2.0, and an older state reproduction all list 22. The 22 CEFs are <strong>shared across ALL modules</strong> — one shared section, never duplicated per module. CMS publishes these as web tables with CSV downloads, not as a spreadsheet. The spreadsheet is the <strong>SMC Intake Form (.xlsx)</strong> — the blank workbook a state fills in with the lists (tabs: CEF · Outcomes &amp; Metrics · Required Artifacts). <strong>Verified against the CMS repo on 2026-11-24</strong> — the repo is updated quarterly, so outcomes, metrics, and citations may change.</div>
+
+  <div class="card">
+    <h3>Important: the old checklist is retired</h3>
+    <p>The Medicaid Enterprise Certification Toolkit (MECT) — including its 2007 Chapter 5 “Provider Management Checklist” — was <strong>sunset by CMS on 14 April 2022</strong> (SMD #22-001). States were told not to use MECT/MEET for MES projects started after that date. SMC + the two lists below are the current mechanism. Current guidance and training should use SMC, not MECT.</p>
+  </div>
+      </section>
+
+      <section class="about-panel" id="panel-about-process">
+  <h2 id="process-flow" style="margin-top:30px">The SMC process at a glance</h2>
+  <p style="color:var(--muted);font-size:14.5px;max-width:840px;margin-bottom:12px">Tap any stage to jump to the part of this page that explains it.</p>
+  <div class="card" style="padding:18px 16px 12px">
+  <svg class="flowchart" viewBox="0 0 680 772" role="img" aria-label="SMC certification process flowchart: APD approval, Intake Form, Operational Readiness Review, go-live, Certification Review, certified" font-family="Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+    <defs>
+      <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill:var(--muted)"/></marker>
+    </defs>
+    <a href="#how-it-fits" onclick="openAboutAnchor('fit','how-it-fits');return false;"><title>Jump to: How the lists fit together</title>
+      <g><rect class="fnode" x="40" y="8" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="72" cy="54" r="17" style="fill:var(--teal)"/><text x="72" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">1</text>
+      <text x="102" y="40" font-size="16.5" font-weight="700" style="fill:var(--ink)">APD approved</text>
+      <text x="102" y="63" font-size="13" style="fill:var(--muted)">CMS approves the Advance Planning Document</text>
+      <text x="102" y="84" font-size="13" style="fill:var(--muted)">90% federal match for build (DDI) · 75% for operations</text>
+      <text x="624" y="60" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
+    </a>
+    <line x1="340" y1="100" x2="340" y2="138" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
+    <a href="#proof-methods" onclick="openAboutAnchor('proof','proof-methods');return false;"><title>Jump to: How a state proves it — the six proof methods</title>
+      <g><rect class="fnode" x="40" y="140" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="72" cy="186" r="17" style="fill:var(--teal)"/><text x="72" y="191" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">2</text>
+      <text x="102" y="172" font-size="16.5" font-weight="700" style="fill:var(--ink)">SMC Intake Form populated</text>
+      <text x="102" y="195" font-size="13" style="fill:var(--muted)">State lists every outcome + all 22 CEFs, with the evidence named</text>
+      <text x="102" y="216" font-size="13" style="fill:var(--muted)">Finalised form due at least 2 weeks before each review</text>
+      <text x="624" y="192" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
+    </a>
+    <line x1="340" y1="232" x2="340" y2="270" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
+    <a href="#reviews" onclick="openAboutAnchor('reviews','reviews');return false;"><title>Jump to: The two reviews — ORR vs. Certification Review</title>
+      <g><rect class="fnode" x="40" y="272" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="72" cy="318" r="17" style="fill:var(--teal)"/><text x="72" y="323" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">3</text>
+      <text x="102" y="304" font-size="16.5" font-weight="700" style="fill:var(--ink)">Operational Readiness Review (ORR)</text>
+      <text x="102" y="327" font-size="13" style="fill:var(--muted)">Pre-production, after most UAT · evidence due 2 weeks before</text>
+      <text x="102" y="348" font-size="12.5" font-style="italic" style="fill:var(--amber)">Gate: ready? If not — remediate and re-review.</text>
+      <text x="624" y="324" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
+    </a>
+    <line x1="340" y1="364" x2="340" y2="402" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
+    <a href="#controls" onclick="showModule('PM');return false;"><title>Jump to: the module checklists (Provider Management)</title>
+      <g><rect class="fnode" x="40" y="404" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="72" cy="450" r="17" style="fill:var(--teal)"/><text x="72" y="455" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">4</text>
+      <text x="102" y="436" font-size="16.5" font-weight="700" style="fill:var(--ink)">Go-live — system in production</text>
+      <text x="102" y="459" font-size="13" style="fill:var(--muted)">Metric values start flowing into the ORW, monthly</text>
+      <text x="102" y="480" font-size="13" style="fill:var(--muted)">From here the outcomes are measured, not just demonstrated</text>
+      <text x="624" y="456" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
+    </a>
+    <line x1="340" y1="496" x2="340" y2="534" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
+    <text x="352" y="522" font-size="12.5" style="fill:var(--muted)">≥ 6 months in production</text>
+    <a href="#reviews-table" onclick="openAboutAnchor('reviews','reviews-table');return false;"><title>Jump to: the ORR vs. Certification Review table</title>
+      <g><rect class="fnode" x="40" y="536" width="600" height="92" rx="14" style="fill:var(--surface);stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="72" cy="582" r="17" style="fill:var(--teal)"/><text x="72" y="587" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">5</text>
+      <text x="102" y="568" font-size="16.5" font-weight="700" style="fill:var(--ink)">Certification Review (CR)</text>
+      <text x="102" y="591" font-size="13" style="fill:var(--muted)">Live production demo — no test data · ORW values, 2 weeks before</text>
+      <text x="102" y="612" font-size="12.5" font-style="italic" style="fill:var(--amber)">Gate: achieved? If not — CMS follows up on remediations first.</text>
+      <text x="624" y="588" text-anchor="end" font-size="22" style="fill:var(--teal)">›</text></g>
+    </a>
+    <line x1="340" y1="628" x2="340" y2="666" stroke-width="2" style="stroke:var(--muted)" marker-end="url(#arr)"/>
+    <a href="#state-examples" onclick="openAboutAnchor('examples','state-examples');return false;"><title>Jump to: State examples — what states have actually done</title>
+      <g><rect class="fnode" x="40" y="668" width="600" height="92" rx="14" style="fill:var(--teal);stroke:var(--teal);stroke-width:1.5"/>
+      <circle cx="72" cy="714" r="17" fill="#fff"/><text x="72" y="719" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--teal)">6</text>
+      <text x="102" y="700" font-size="16.5" font-weight="700" fill="#fff">Certified</text>
+      <text x="102" y="723" font-size="13" fill="#fff" opacity="0.9">Certification letter + report</text>
+      <text x="102" y="744" font-size="13" fill="#fff" opacity="0.9">75% ops match, backdated to the quarter after go-live</text>
+      <text x="624" y="720" text-anchor="end" font-size="22" fill="#fff">›</text></g>
+    </a>
+  </svg>
+  <p style="font-size:13.5px;color:var(--muted);margin:6px 4px 4px">After certification: monthly ORW reporting + OAPD updates. CEFs aren’t re-demonstrated at CR unless something changed, a new DR test ran, or a new security assessment is due. · <a href="https://raw.githubusercontent.com/tilakboinapally/CMS-SMC-Checklist/main/smc-process-flowchart.svg" target="_blank" rel="noopener">Download this flowchart as a standalone SVG (for slides)</a></p>
+  </div>
+      </section>
+
+      <section class="about-panel" id="panel-about-proof">
+    <div class="card">
+      <h3>How proof works — the short version</h3>
+      <ul>
+        <li><strong>CMS does not prescribe one proof method per item.</strong> The normal package is a combination: a <strong>live system demo</strong> (pre-production at the ORR, in production at the Certification Review) + <strong>metric values in the Operational Report Workbook (ORW)</strong> + a <strong>named evidence file in the CMS Box repository</strong>, cited on the SMC Intake Form.</li>
+        <li><strong>CEFs are different:</strong> CMS says CEF criteria <em>do not require demonstrations</em> — the filed document, attestation, or third-party assessment is enough.</li>
+        <li>Only two PM metrics name a non-numeric artifact: <strong>PM9</strong> (screenshots of high-risk providers) and <strong>PM16</strong> (copies of notices). The only <strong>mandatory third-party</strong> proof is security/privacy — <strong>CEF09 / CEF12</strong>.</li>
+        <li><strong>“N/A” is a formal adjudication, not an omission</strong> — the state marks it on the Intake Form with a written justification, for both reviews (see the reviews section below).</li>
+      </ul>
+      <p style="margin-top:10px">The full six-method taxonomy and the ORR/CR mechanics are in the next section. State examples are in their own section below the lists, labelled as vendor claims or procurement documents — CMS itself publishes <strong>no state-specific PM outcomes and no state metric values</strong> (verified 24 Nov 2026).</p>
     </div>
+
+  <h2 id="proof-methods" style="margin-top:30px">How a state proves it — the six proof methods CMS uses (all modules)</h2>
+  <p style="color:var(--muted);font-size:14.5px;max-width:840px;margin-bottom:12px">From SMC Guidance v2.0 and the MES Certification Repository. This taxonomy applies to <strong>all modules</strong> on this page — Provider Management, Claims Processing, Pharmacy Benefit Management, Eligibility and Enrollment, Financial Management, Decision Support / Data Warehouse, Encounter Processing, Long-term Services and Supports, Member Management, Prescription Drug Monitoring Program, Third-party Liability, Program Integrity, and Electronic Visit Verification, plus the shared CEFs. Almost every outcome item is proved by a <strong>combination</strong> — the per-item panels below give the primary method first, then what it looks like in practice.</p>
+  <div class="card" style="padding:6px 16px">
+    <table>
+      <tr><th style="width:190px">Method</th><th>What it is</th><th style="width:230px">Where CMS defines it</th></tr>
+      <tr><td><strong>A · Metric report (ORW)</strong></td><td>Numerical values, by month, in the Operational Report Workbook. Metric definitions are agreed in the APD/Intake Form; values run from go-live to the most recent month-end for the Certification Review, then monthly thereafter and with every OAPD.</td><td>SMC Guidance §§3, 6.1.1; FAQs Q31–Q38</td></tr>
+      <tr><td><strong>B · Live system demo</strong></td><td>State staff/SMEs walk the CMS Certification Team through the function — pre-production/test environment at the ORR; <strong>live production environment at the CR, with no test data entered</strong>.</td><td>SMC Guidance §§5.1, 6.1; FAQs Q6, Q21</td></tr>
+      <tr><td><strong>C · Screenshots</strong></td><td>Screen prints filed <strong>unredacted</strong> in Box and named on the Intake Form. Only PM9 names screenshots in its default metric; they are also routine supporting evidence for CEF10 (business-rules engine) and security evidence.</td><td>PM page (PM9); CEF page (CEF10); CEF Tips</td></tr>
+      <tr><td><strong>D · Document / sample artifact</strong></td><td>A named file in Box: a copy, list, report, plan, contract clause, APD section, or test result. The dominant CEF method, and the explicit method for PM16 (copies of notices) and the PM lists (PM10, PM19, PM20).</td><td>SMC Guidance §4.1; CEF “Example Evidence” column</td></tr>
+      <tr><td><strong>E · Third-party assessment</strong></td><td>An independent assessor (never the DDI vendor/organisation) assesses security/privacy controls: Security Assessment Report + penetration test + vulnerability scans + POA&amp;M. Required for CEF09 and CEF12, and an entry criterion for both reviews.</td><td>SMC Guidance App. C; 45 CFR 95.621(f)</td></tr>
+      <tr><td><strong>F · State self-attestation</strong></td><td>The state attests in the APD and/or Intake Form, with no separate file — named expressly for CEF02, CEF03 (alternative), CEF08, CEF11 (alternative), CEF22 (alternative). FAQ Q20 adds the outcome-side equivalent: some outcomes may require only an attestation or a demo, agreed in advance with the CMS MES State Officer.</td><td>CEF page; FAQs Q20, Q34–Q35</td></tr>
+    </table>
   </div>
 
-  <div id="pmExamples">
+        <div class="grid2">
+    <div class="card">
+      <h3>The 169 items, grouped by primary proof</h3>
+      <ul>
+        <li><strong>Metric (ORW) + live demo — most outcome items:</strong> 19 of 21 PM items (PM1–PM8, PM10–PM15, PM17–PM21; PM14 and PM17 partly reuse existing reporting; PM9 adds screenshots; PM16 is artifact-first), all of CP1–CP5, and PBM1–PBM4.</li>
+        <li><strong>Metric report (ORW), with demo or attestation where CMS names them — most E&amp;E items:</strong> EE1, EE3, EE5, EE11 pair the ORW report with a live demo; EE2 adds user surveys and an attestation of skip logic; EE10, EE20 and EE25 are attestation-led (with test results and/or a sub-production demo); EE6–EE9, EE12–EE14, EE17–EE19, EE21, EE23, EE24, EE26 and EE27 are ORW metric reports; EE22’s FFE transfer rates come from the <strong>CMS Weekly AT Report</strong> (the state does not supply that data).</li>
+        <li><strong>PERM results — EE4, EE15, EE16:</strong> where CMS names them, the most recent PERM results (plus, for EE4, the internal QA description/reports, and for EE15 an attestation, test results, and sub-production demo) are the evidence.</li>
+        <li><strong>Metric report (ORW) / filed aging report — FM items:</strong> FM1, FM2, FM4, FM7, FM8 and FM9 are ORW metric reports (FM1 adds a demo of the payment/recoupment calculation); FM5 and FM6 are proved by the repayment / TPL recovery <strong>aging report</strong> filed with CMS; FM3 is a pass/fail retention demonstration.</li>
+        <li><strong>Document / sample-report artifact + live demo — PBM5, PBM7, PBM8, PBM9:</strong> where the metric says “Provide a sample report” or “Provide a copy,” the state files the artifact in CMS’s Box repository and demos the function live.</li>
+        <li><strong>Pass/fail retention demonstration + metric report — CP6:</strong> the state demonstrates 100% retention for the required periods (3 / 5 / 6 / 10 years from closure of all related actions).</li>
+        <li><strong>Document / APD / contract — 9 CEFs:</strong> CEF01, CEF05, CEF06, CEF07, CEF11, CEF13, CEF19, CEF20, CEF21.</li>
+        <li><strong>Self-attestation (alone or as stated alternative) — 5 CEFs:</strong> CEF02, CEF03, CEF08, CEF11, CEF22.</li>
+        <li><strong>Third-party assessment — 2 CEFs:</strong> CEF09, CEF12 (CEF18’s DR-test deficiencies feed the same POA&amp;M).</li>
+        <li><strong>Refer-to-outcomes / N/A-prone — 4 CEFs:</strong> CEF04, CEF14, CEF16, CEF17 (CEF17 is always N/A for a PM module).</li>
+        <li><strong>Metric / federal reporting — 2 CEFs:</strong> CEF15, CEF22.</li>
+        <li><strong>Metric report (ORW) + live demo — most of the nine added modules:</strong> DSS/DW1–DSS/DW2, EPS1–EPS2, LTSS1, LTSS2, LTSS5, LTSS7, LTSS9–LTSS11 (LTSS9–LTSS11 pair an average-days / trend metric with capability demos), MM1, MM6–MM8, MM11, PDMP1, PDMP5, PDMP6, TPL1–TPL11 and TPL13, PI1, PI2, PI4–PI8, PI10, PI11, and the borrowed PM11, PM17, PM18 in the PI list.</li>
+        <li><strong>Live demo only — pass/fail capability and “Verify…” checks:</strong> LTSS3, LTSS4, LTSS6, LTSS8 (no computable count — the demo <em>is</em> the proof), MM3 and MM4 (the metric restates the rule), PDMP2 (CMS publishes no metric at all), EPS4 (demo + attestation), and PI3 / PI12 (demo plus an ad-hoc report sample).</li>
+        <li><strong>Document / sample artifact in CMS Box — where the metric says “provide a copy / copies / sample”:</strong> EPS3 (managed-care contract clauses), EPS5 (filed federal reports), MM2, MM5, MM9 (sample notices), MM10 (directory extract), PDMP3 (interstate data-sharing agreements), PDMP4 (access-issues report), TPL12 (agreements + periodic risk analysis), PI9 (RAC report), and the borrowed FM5 (repayment aging report) and PBM9 (sample report) in the PI list.</li>
+        <li><strong>EVV evidence — test reports, screenshots, explanations, training records:</strong> EVV01–EVV09 are proved with automated test reports, screenshots, written explanations, and training materials, with a demonstration in the <strong>production environment</strong> at the Certification Review. The measures are the four named metrics on the EVV module page — <em>not</em> the placeholder Metric IDs in the EVV Intake Form (see the EVV section).</li>
+        <li><strong>HIE — no items to group:</strong> CMS publishes no CMS-required outcomes for HIE, so there is nothing to prove against a CMS list; states define their own outcomes and metrics (see the HIE section).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Three rules that govern every method</h3>
+      <ul>
+        <li><strong>Evidence ≠ Required Artifacts.</strong> Evidence demonstrates an outcome or condition; Required Artifacts (Certification Request Letter, System Acceptance Letter, Monthly Project Status Reports, Master Test Plan, Test Summary Reports, Deployment Plan, Defect/Risk/Issue Lists) describe the project’s progression and are not typically used as evidence.</li>
+        <li><strong>Cite the exact Box filename</strong> (not a hyperlink) in the Intake Form evidence column, pointing to the relevant section of long documents. A state may reuse existing DDI/RFP deliverables as evidence — no separate “wraparound” file is needed. CEF files must not be redacted, including screenshots/reports containing PHI/PII.</li>
+        <li><strong>Not every outcome needs a metric</strong> (FAQ Q20): one metric may serve multiple outcomes, and a state may propose alternative metrics to its State Officer — but must do so before reporting them in the OAPD. Any change to outcomes/metrics requires an APD-Update.</li>
+      </ul>
+    </div>
+        </div>
+      </section>
+
+      <section class="about-panel" id="panel-about-reviews">
+  <h2 id="reviews" style="margin-top:30px">The two reviews — ORR vs. Certification Review (all modules)</h2>
+  <p style="color:var(--muted);font-size:14.5px;max-width:840px;margin-bottom:12px">The same Intake Form is adjudicated twice for every module: once before go-live, once after at least six months in production.</p>
+  <div class="card" id="reviews-table" style="padding:6px 16px">
+    <table>
+      <tr><th style="width:170px"></th><th>Operational Readiness Review (ORR)</th><th>Certification Review (CR)</th></tr>
+      <tr><td><strong>When</strong></td><td>Pre-production, before go-live, after most UAT is complete.</td><td>System in production ≥ 6 months; CMS advises scheduling toward the end of month 7 after go-live, to allow time to pull metrics.</td></tr>
+      <tr><td><strong>Question it answers</strong></td><td>Is the system production-ready, and will it achieve the outcomes / support metric collection?</td><td>Has the system in production achieved the outcomes, as assessed by metrics? (Impact, not just functionality.)</td></tr>
+      <tr><td><strong>Entry criteria</strong></td><td>8 items, incl. latest draft Intake Form with all CMS-required outcomes + N/A justifications; UAT completion date; security assessment (SAR) and pen-test results within 2 years; POA&amp;M with all critical vulnerabilities resolved or an approved risk-acceptance plan.</td><td>11 items: the ORR set, plus the ORW with metric data back to go-live; Certification Request Letter; System Acceptance Letter (acceptance date must precede the CR); and T-MSIS Outcomes-Based Assessment (OBA) compliance, confirmed with the CMS T-MSIS team.</td></tr>
+      <tr><td><strong>Evidence due</strong></td><td>Finalised Intake Form + unredacted evidence + Required Artifacts + ORW (metric <em>definitions</em>) in Box, <strong>2 weeks before</strong>. CMS’s Information Request Listing (IRL) follows 1 week before.</td><td>Same, 2 weeks before, plus the ORW with <strong>metric values</strong> (≥ 6 months, or back to the retroactive certification date).</td></tr>
+      <tr><td><strong>Demonstrations</strong></td><td>Module demos in a pre-production/test environment, after programme overview and training/testing/defect status.</td><td>Production demos in the <strong>live production environment — no test data</strong> — then a metrics review (numbers, anomalies, methodology changes).</td></tr>
+      <tr><td><strong>What “pass” looks like</strong></td><td>Applicable CEFs met/attested in the APD; outcome functionality developed <em>and tested</em> per the Master Test Plan; the system will support ORW metric collection/reporting.</td><td>The system <em>has achieved</em> the approved CMS-required + state-specific outcomes/metrics in production.</td></tr>
+      <tr><td><strong>What comes back</strong></td><td>Intake Form returned <strong>within 1 week</strong> with CMS comments/adjudication + a tear-out of observations, recommendations, and action items.</td><td>Updated Intake Form, the <strong>certification report, and the certification letter</strong>. 75% FFP for operations is then claimable retroactive to the first day of the calendar quarter following implementation.</td></tr>
+    </table>
+  </div>
+
+        <div class="grid2">
+    <div class="card">
+      <h3>Who reviews the evidence</h3>
+      <ul>
+        <li><strong>CMS MES State Officer</strong> — the state’s standing CMS contact: APD approval, outcome/metric finalisation, monthly project-status reports, entry-criteria confirmation, T-MSIS liaison, post-certification reporting.</li>
+        <li><strong>CMS Certification Team</strong> — runs the ORR and CR, sends the IRL, questions the demos, and records its evaluation/adjudication on the Intake Form.</li>
+        <li><strong>CMS T-MSIS team</strong> (via the State Officer) — confirms OBA compliance for CR entry.</li>
+        <li><strong>Independent third-party security/privacy assessor</strong> — not a CMS reviewer, but its SAR/pen-test/POA&amp;M is required evidence; the assessor organisation cannot be the one performing DDI.</li>
+        <li><strong>No IV&amp;V is required by SMC itself</strong> — states often procure it separately (see Missouri in the state examples).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Adjudication &amp; “N/A with justification”</h3>
+      <ul>
+        <li>The Intake Form is the official record: the state fills the State ORR/CR Evidence and Comments columns; the Certification Team records its adjudication in the CMS columns.</li>
+        <li>The only adjudication labels CMS publishes verbatim are the EVV ones: <strong>“Evidence Satisfactory,” “Evidence Not Satisfactory,” and “Not Applicable.”</strong> CMS has not published a separate general-SMC label list. “Not Satisfactory” does not automatically mean denial — CMS follows up on remediations before assembling the certification package.</li>
+        <li><strong>N/A rule:</strong> mark “N/A” in the State ORR <em>and</em> CR Evidence columns and justify it in the Comments column <em>for both reviews</em> — CMS must accept the justification. CMS’s own worked example: <em>CEF17 is an Eligibility &amp; Enrollment condition and does not apply to a Provider Management module.</em></li>
+        <li>A CEF met at ORR need not be re-demonstrated at CR unless there are significant changes, a long time-lapse, a new annual DR test, or a new biennial security assessment.</li>
+      </ul>
+    </div>
+        </div>
+      </section>
+
+      <section class="about-panel" id="panel-about-fit">
+    <div class="card" id="how-it-fits">
+      <h3>How the lists fit together</h3>
+      <ul>
+        <li><strong>Module outcomes</strong> — module-specific. Based on statute/regulation; they form the baseline a system must meet to be certified and keep enhanced funding for operations. This page covers Provider Management (21), Claims Processing (6), Pharmacy Benefit Management (9), Eligibility and Enrollment (27), Financial Management (9), Decision Support / Data Warehouse (2), Encounter Processing (5), Long-term Services and Supports (11), Member Management (11), Prescription Drug Monitoring Program (6), Third-party Liability (13), Program Integrity (18 rows), Health Information Exchange (0 CMS-required outcomes), and Electronic Visit Verification (9).</li>
+        <li><strong>CEF</strong> — apply to <em>every</em> MES module, under 42 CFR §433.112 (build) and §433.116 (operations). One shared list of 22 — never duplicated per module. Non-applicable CEFs are marked “N/A” with justification.</li>
+        <li><strong>Process:</strong> APD approval → state populates the SMC Intake Form with all outcomes + CEFs → Operational Readiness Review (ORR) → production → Certification Review (CR). The finalized form is due at least 2 weeks before the review and becomes the official record.</li>
+      </ul>
+    </div>
+      </section>
+
+      <section class="about-panel" id="panel-about-examples">
   <h2 id="state-examples" style="margin-top:36px">State examples — Provider Management: what states have actually done</h2>
   <p style="color:var(--muted);font-size:14.5px;max-width:840px">Researched 24 Nov 2026. Read the labels carefully: CMS publishes <strong>no</strong> certification letter, certification report, completed Intake Form, or ORW metric values for any Provider Management module — that evidence lives in CMS’s Box repository and is not public. Everything below is a <strong>vendor or state announcement</strong> or a <strong>procurement document</strong>, labelled as such. They show that certifications and procurements happened — not what CMS adjudicated item by item.</p>
 
@@ -654,9 +715,10 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
     <p style="font-size:13px;color:var(--muted);margin-bottom:6px"><span class="tag">In progress — not certified</span> <span class="tag">Cautionary example</span></p>
     <p>Missouri is procuring IV&amp;V to evaluate its Provider Enrollment Module (primary vendor: Gainwell Technologies). The SOW itself notes CMS has sunset MECT/MEET and introduced SMC with ORR and CR — yet it still frames compliance against the retired <strong>MECT 2.1.1</strong>. A caution: always cite SMC Guidance v2.0 as the current authority. No metric values are public.</p>
   </div>
+      </section>
 
-  </div>
-
+      <section class="about-panel" id="panel-about-sources">
+        <div class="sectionhead" style="margin-top:0"><div><h2>Sources &amp; verification</h2></div></div>
   <h2 style="margin-top:32px">Sources</h2>
   <div class="card">
     <ul style="margin:0 0 0 18px;padding:0;font-size:14.5px;display:grid;gap:7px">
@@ -722,6 +784,11 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
     <li><strong>New-module source quirks, flagged in place:</strong> MM2’s and MM9’s metrics concern termination notices while their outcomes concern initial assignment / program information (apparent CMS copy/paste errors, shown verbatim); EPS3’s “metric” is descriptive prose, not a number; LTSS6 cites “HIPAA” generically with no CFR section; LTSS9 and LTSS11 cite a 2014 CMS bulletin and the §1915(c) waiver technical guide rather than CFR sections; TPL11’s source is a CMS training handbook, not a regulation; PDMP certification is constrained because in most states the PDMP is owned by the health department or board of pharmacy, not the Medicaid agency.</li>
     <li><strong>Verified against the CMS repo on 2026-11-24.</strong> The repository is updated quarterly, so outcomes, metrics, and citations may change — re-check the repo before citing any item in a submission.</li>
   </ul>
+      </section>
+
+      <div class="empty" id="empty">No matches — try a shorter term or clear the category filter.</div>
+    </div>
+  </div>
 
   <footer>Built from CMS’s MES Certification Repository (verified 24 Nov 2026), SMC Guidance v2.0 (21 Oct 2025), and the public vendor/state sources linked in the state-examples section. This is an independent study and reference utility — always confirm against the live CMS pages before citing in a submission, as the Repository is updated in quarterly releases.</footer>
 </div>
@@ -1069,31 +1136,98 @@ function fillCats(mod){
   Object.keys(MODULE_CATS[mod]||{}).sort().forEach(function(c){var o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o)});
 }
 var activeModule='PM';
+var activeView='dashboard';
+var activeAbout=null;
 var MODULE_TOTALS={PM:21,CP:6,PBM:9,EE:27,FM:9,DSS:2,EPS:5,LTSS:11,MM:11,PDMP:6,TPL:13,PI:18,HIE:0,EVV:9,AVS:0,CEF:22};
 var MODULE_NAMES={PM:'Provider Management',CP:'Claims Processing',PBM:'Pharmacy Benefit Management',EE:'Eligibility and Enrollment',FM:'Financial Management',DSS:'Decision Support / Data Warehouse',EPS:'Encounter Processing',LTSS:'Long-term Services and Supports',MM:'Member Management',PDMP:'Prescription Drug Monitoring Program',TPL:'Third-party Liability',PI:'Program Integrity',HIE:'Health Information Exchange',EVV:'Electronic Visit Verification',AVS:'Asset Verification System',CEF:'Conditions for Enhanced Funding'};
 function apply(){
   var q=document.getElementById('search').value.trim().toLowerCase();
-  var cat=sel.value; var visible=0;
+  var cat=sel.value;
+  var controls=document.getElementById('controls');
+  var countline=document.getElementById('countline');
+  var empty=document.getElementById('empty');
+  if(activeView==='about'){
+    controls.style.display='none';
+    countline.textContent='';
+    empty.style.display='none';
+    return;
+  }
+  controls.style.display='';
+  if(activeView==='dashboard'){
+    sel.style.display='none';
+    var visible=0;
+    document.querySelectorAll('#panel-dashboard .tile').forEach(function(t){
+      var hay=(t.getAttribute('data-title')||'').toLowerCase();
+      var show=!q||hay.indexOf(q)>-1;
+      t.style.display=show?'':'none'; if(show) visible++;
+    });
+    countline.textContent = q ? '16 sections \u00b7 169 items total \u00b7 showing '+visible+' of 16 sections' : '16 sections \u00b7 169 items total';
+    empty.style.display=(visible===0)?'block':'none';
+    return;
+  }
+  sel.style.display='';
+  var visible2=0;
   document.querySelectorAll('#panel-'+activeModule+' details.item').forEach(function(el){
     var okCat = !cat || el.getAttribute('data-cat')===cat;
     var okQ = !q || el.getAttribute('data-search').indexOf(q)>-1;
     var show = okCat&&okQ;
-    el.style.display = show?'':'none'; if(show) visible++;
+    el.style.display = show?'':'none'; if(show) visible2++;
   });
   var total=MODULE_TOTALS[activeModule];
-  document.getElementById('countline').textContent = total===0
-    ? MODULE_NAMES[activeModule]+': 0 CMS-required outcomes — special section, no checklist items · 169 items across all sixteen sections'
-    : MODULE_NAMES[activeModule]+': showing '+visible+' of '+total+' items · 169 items across all sixteen sections';
-  document.getElementById('empty').style.display = (visible===0 && total>0)? 'block':'none';
-  var pe=document.getElementById('pmExamples'); if(pe) pe.style.display = activeModule==='PM' ? '' : 'none';
+  countline.textContent = total===0
+    ? MODULE_NAMES[activeModule]+': 0 CMS-required outcomes \u2014 special section, no checklist items \u00b7 169 items across all sixteen sections'
+    : MODULE_NAMES[activeModule]+': showing '+visible2+' of '+total+' items \u00b7 169 items across all sixteen sections';
+  empty.style.display = (visible2===0 && total>0)? 'block':'none';
+}
+function closeMenu(){
+  var nav=document.getElementById('sidenav');
+  var tog=document.getElementById('menutoggle');
+  if(nav) nav.classList.remove('open');
+  if(tog) tog.setAttribute('aria-expanded','false');
+}
+function setActiveNav(){
+  document.querySelectorAll('.navbtn').forEach(function(b){
+    var isMod=b.hasAttribute('data-module') && activeView==='module' && b.getAttribute('data-module')===activeModule;
+    var isDash=b.hasAttribute('data-view') && activeView==='dashboard';
+    var isAbout=b.hasAttribute('data-about') && activeView==='about' && b.getAttribute('data-about')===activeAbout;
+    b.classList.toggle('active',isMod||isDash||isAbout);
+  });
+}
+function showView(){
+  document.querySelectorAll('.module-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.about-panel').forEach(function(p){p.classList.remove('active')});
+  if(activeView==='dashboard'){
+    document.getElementById('panel-dashboard').classList.add('active');
+  }else if(activeView==='about'){
+    document.getElementById('panel-about-'+activeAbout).classList.add('active');
+  }else{
+    document.getElementById('panel-'+activeModule).classList.add('active');
+  }
+  setActiveNav();
+  closeMenu();
+}
+function showDashboard(){
+  activeView='dashboard'; activeAbout=null;
+  document.getElementById('search').value=''; sel.value='';
+  fillCats('PM'); apply(); showView();
+  document.getElementById('controls').scrollIntoView({block:'start'});
 }
 function showModule(mod){
-  activeModule=mod;
-  document.querySelectorAll('.module-panel').forEach(function(p){p.classList.remove('active')});
-  document.getElementById('panel-'+mod).classList.add('active');
-  document.querySelectorAll('[data-module]').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-module')===mod)});
-  fillCats(mod); apply();
+  activeView='module'; activeModule=mod; activeAbout=null;
+  document.getElementById('search').value=''; sel.value='';
+  fillCats(mod); apply(); showView();
   document.getElementById('controls').scrollIntoView({block:'start'});
+}
+function showAbout(page){
+  activeView='about'; activeAbout=page;
+  document.getElementById('search').value=''; sel.value='';
+  apply(); showView();
+  document.getElementById('panel-about-'+page).scrollIntoView({block:'start'});
+}
+function openAboutAnchor(page,anchorId){
+  showAbout(page);
+  var el=document.getElementById(anchorId);
+  if(el){ el.scrollIntoView({block:'start'}); }
 }
 function jumpTo(id){
   var prefixes=['PDMP','PBM','DSS','EPS','LTSS','TPL','EVV','MM','PI','CP','EE','FM','CEF','PM'];
@@ -1107,9 +1241,20 @@ function jumpTo(id){
 document.querySelectorAll('[data-module]').forEach(function(b){
   b.addEventListener('click',function(){ showModule(b.getAttribute('data-module')); });
 });
+document.querySelectorAll('[data-about]').forEach(function(b){
+  b.addEventListener('click',function(){ showAbout(b.getAttribute('data-about')); });
+});
+document.querySelectorAll('[data-view="dashboard"]').forEach(function(b){
+  b.addEventListener('click',function(){ showDashboard(); });
+});
+document.getElementById('menutoggle').addEventListener('click',function(){
+  var nav=document.getElementById('sidenav');
+  var open=nav.classList.toggle('open');
+  this.setAttribute('aria-expanded',open?'true':'false');
+});
 document.getElementById('search').addEventListener('input',apply);
 sel.addEventListener('change',apply);
-fillCats('PM'); apply();
+fillCats('PM'); apply(); showView();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f73a0a9a1ea1482d8861778dff0ae46f"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
