@@ -466,7 +466,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
       </section>
       <section class="about-panel" id="panel-about-lists">
         <div class="sectionhead" style="margin-top:0"><div><h2>About these lists</h2></div></div>
-  <p class="lede">One comprehensive utility for the CMS lists a state must satisfy — the outcomes for all fourteen SMC modules: Provider Management, Claims Processing, Pharmacy Benefit Management, Eligibility and Enrollment, Financial Management, Decision Support / Data Warehouse, Encounter Processing, Long-term Services and Supports, Member Management, Prescription Drug Monitoring Program, Third-party Liability, Program Integrity, Health Information Exchange, and Electronic Visit Verification, plus the Conditions for Enhanced Funding that gate the federal match and apply to every module. Use the menu to open a module, then expand any item to see the exact CMS wording, its default metric, the federal regulation behind it, how a state proves it, and what that evidence looks like in practice. Below the lists: how the two CMS reviews (ORR and Certification Review) work, and the real state examples that are public — clearly labelled, because no state has published its per-item metric values.</p>
+  <p class="lede">One comprehensive utility for the CMS lists a state must satisfy — the outcomes for all fourteen SMC modules: Provider Management, Claims Processing, Pharmacy Benefit Management, Eligibility and Enrollment, Financial Management, Decision Support / Data Warehouse, Encounter Processing, Long-term Services and Supports, Member Management, Prescription Drug Monitoring Program, Third-party Liability, Program Integrity, Health Information Exchange, and Electronic Visit Verification, plus the Conditions for Enhanced Funding that gate the federal match and apply to every module. Use the menu to open a module, then expand any item to see the exact CMS wording, its default metric, the federal regulation behind it, how a state proves it, and what that evidence looks like in practice. In the left menu: how the two CMS reviews (ORR and Certification Review) work, and the real state examples that are public — clearly labelled, because no state has published its per-item metric values.</p>
 
   <div class="callout"><strong>About these lists — 169 items total (21 + 6 + 9 + 27 + 9 + 2 + 5 + 11 + 11 + 6 + 13 + 18 + 9 + 22).</strong> Provider Management certification is 21 items, Eligibility and Enrollment is 27, Pharmacy Benefit Management and Financial Management are 9 each, and Claims Processing is 6. Decision Support / Data Warehouse has only 2 CMS-required outcomes, and Health Information Exchange contributes 0 — CMS publishes no CMS-required outcomes for HIE (see its section). Program Integrity’s 18 rows include 6 items shared from other modules, flagged in place. The funding list is <strong>22 conditions</strong> — the live CMS page, its CSV, SMC Guidance v2.0, and an older state reproduction all list 22. The 22 CEFs are <strong>shared across ALL modules</strong> — one shared section, never duplicated per module. CMS publishes these as web tables with CSV downloads, not as a spreadsheet. The spreadsheet is the <strong>SMC Intake Form (.xlsx)</strong> — the blank workbook a state fills in with the lists (tabs: CEF · Outcomes &amp; Metrics · Required Artifacts). <strong>Verified against the CMS repo on 2026-11-24</strong> — the repo is updated quarterly, so outcomes, metrics, and citations may change.</div>
 
@@ -552,7 +552,7 @@ footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:v
         <li>Only two PM metrics name a non-numeric artifact: <strong>PM9</strong> (screenshots of high-risk providers) and <strong>PM16</strong> (copies of notices). The only <strong>mandatory third-party</strong> proof is security/privacy — <strong>CEF09 / CEF12</strong>.</li>
         <li><strong>“N/A” is a formal adjudication, not an omission</strong> — the state marks it on the Intake Form with a written justification, for both reviews (see the reviews section below).</li>
       </ul>
-      <p style="margin-top:10px">The full six-method taxonomy and the ORR/CR mechanics are in the next section. State examples are in their own section below the lists, labelled as vendor claims or procurement documents — CMS itself publishes <strong>no state-specific PM outcomes and no state metric values</strong> (verified 24 Nov 2026).</p>
+      <p style="margin-top:10px">The full six-method taxonomy is on this page below. The ORR/CR mechanics are in The two reviews in the left menu, and state examples are in State examples — labelled as vendor claims or procurement documents. CMS itself publishes <strong>no state-specific PM outcomes and no state metric values</strong> (verified 24 Nov 2026).</p>
     </div>
 
   <h2 id="proof-methods" style="margin-top:30px">How a state proves it — the six proof methods CMS uses (all modules)</h2>
@@ -1157,8 +1157,22 @@ function apply(){
     sel.style.display='none';
     var visible=0;
     document.querySelectorAll('#panel-dashboard .tile').forEach(function(t){
+      var mod=t.getAttribute('data-module');
       var hay=(t.getAttribute('data-title')||'').toLowerCase();
-      var show=!q||hay.indexOf(q)>-1;
+      var titleHit=!q||hay.indexOf(q)>-1;
+      var show=titleHit, hits=[];
+      if(!show&&q){
+        var items=document.querySelectorAll('#panel-'+mod+' details.item');
+        for(var i=0;i<items.length;i++){
+          var s=items[i].getAttribute('data-search')||'';
+          if(s.indexOf(q)>-1){ show=true; hits.push(items[i].id.replace('item-','')); }
+        }
+      }
+      var stat=t.querySelector('.tstat');
+      if(stat){
+        if(!stat.getAttribute('data-orig')) stat.setAttribute('data-orig',stat.textContent);
+        stat.textContent=(q&&!titleHit&&hits.length)?'Matches: '+hits.slice(0,4).join(' · ')+(hits.length>4?' +'+(hits.length-4)+' more':''):stat.getAttribute('data-orig');
+      }
       t.style.display=show?'':'none'; if(show) visible++;
     });
     countline.textContent = q ? '16 sections \u00b7 169 items total \u00b7 showing '+visible+' of 16 sections' : '16 sections \u00b7 169 items total';
